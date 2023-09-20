@@ -318,126 +318,63 @@ class CgMainView extends StatefulWidget {
       );
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("MagicBook"),
+      ),
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
-        controller: ScrollController(),
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        controller: controller.scrollController,
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
             children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor.withOpacity(0.6),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0x19000000),
-                      blurRadius: 24,
-                      offset: Offset(0, 11),
-                    ),
-                  ],
+              SideMenu(
+                menuList: cgMainService.menuList,
+                title: "Basic",
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              SideMenu(
+                menuList: cgMainService.hyperUiMenuList,
+                title: "Hyper UI",
+              ),
+              SideMenu(
+                menuList: cgMainService.slicingUiMenuList,
+                title: "Slicing UI",
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              SideMenu(
+                menuList: cgMainService.slicingUiRandomMenuList,
+                title: "Slicing UI Random",
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              SideMenu(
+                menuList: cgMainService.suiRandomList,
+                title: "Slicing UI",
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Text(
+                "© CapekNgoding.com",
+                style: TextStyle(
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.bold,
                 ),
-                child: Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(12.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                            onTap: () => Get.to(TutorialView()),
-                            child: Icon(
-                              MdiIcons.ninja,
-                              size: 36.0,
-                              color: primaryColor,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 6.0,
-                          ),
-                          Text(
-                            "Magicbook",
-                            style: GoogleFonts.moonDance(
-                              fontSize: 28.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.orange,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 12.0,
-                    ),
-                    Expanded(
-                      child: ScrollConfiguration(
-                        behavior: ScrollConfiguration.of(context)
-                            .copyWith(scrollbars: false),
-                        child: SingleChildScrollView(
-                          controller: ScrollController(),
-                          child: Column(
-                            children: [
-                              SideMenu(
-                                menuList: cgMainService.menuList,
-                                title: "Basic",
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              SideMenu(
-                                menuList: cgMainService.hyperUiMenuList,
-                                title: "Hyper UI",
-                              ),
-                              SideMenu(
-                                menuList: cgMainService.slicingUiMenuList,
-                                title: "Slicing UI",
-                              ),
-                              const SizedBox(
-                                height: 20.0,
-                              ),
-                              SideMenu(
-                                menuList: cgMainService.slicingUiRandomMenuList,
-                                title: "Slicing UI Random",
-                              ),
-                              const SizedBox(
-                                height: 20.0,
-                              ),
-                              SideMenu(
-                                menuList: cgMainService.suiRandomList,
-                                title: "Slicing UI",
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              Text(
-                                "© CapekNgoding.com",
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+              ),
+              SizedBox(
+                height: 20.0,
               ),
             ],
           ),

@@ -2,11 +2,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
+import '../../../shared/widget/other/downloadable/downloadable.dart';
+import '../widget/debug_social_media.dart';
+
 class DebugView extends StatefulWidget {
   final BuildContext context;
   final bool visible;
   final Widget? child;
-  const DebugView({
+
+  DebugView({
     Key? key,
     required this.context,
     required this.visible,
@@ -23,18 +27,207 @@ class DebugView extends StatefulWidget {
     return Material(
       child: Stack(
         children: [
-          child ??
-              Container(
-                width: 0,
-                height: 0,
-              ),
+          if (!controller.previewMode) child ?? Container(),
+          if (controller.previewMode)
+            Downloadable(
+              child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                          "https://i.ibb.co/mSn8dfP/Dark-Blue-White-Brush-Stroke-Business-Ideas-You-Tube-Thumbnail-30.png",
+                        ),
+                        fit: BoxFit.fitWidth,
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              left: 100.0,
+                              bottom: 180.0,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 300.0,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      FittedBox(
+                                        child: Text(
+                                          controller.tag,
+                                          textAlign: TextAlign.left,
+                                          style: GoogleFonts.robotoCondensed(
+                                            fontSize: 128.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    await DownloadableState.instance.capture();
+                                  },
+                                  child: Container(
+                                    width: 1000.0,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        FittedBox(
+                                          child: Text(
+                                            controller.title,
+                                            textAlign: TextAlign.left,
+                                            style: GoogleFonts.robotoCondensed(
+                                              fontSize: 164.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Color(0xffffcd25),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 160.0,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      FittedBox(
+                                        child: Text(
+                                          controller.subtitle,
+                                          textAlign: TextAlign.left,
+                                          style: GoogleFonts.robotoCondensed(
+                                            fontSize: 128.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 100.0,
+                          bottom: 100.0,
+                          child: Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  DebugSocialMedia(
+                                    color: Color(0xffd32322),
+                                    url:
+                                        "https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png",
+                                    label: "@CapekNgoding",
+                                  ),
+                                  const SizedBox(
+                                    width: 20.0,
+                                  ),
+                                  DebugSocialMedia(
+                                    color: Colors.black,
+                                    url:
+                                        "https://icons.iconarchive.com/icons/arturo-wibawa/akar/256/tiktok-icon.png",
+                                    label: "@CodingWithDeny",
+                                    iconColor: Colors.white,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 12.0,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  DebugSocialMedia(
+                                    color: Color(0xff1d93d5),
+                                    url:
+                                        "https://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Linkedin-icon.png",
+                                    label: "Deny Ocr",
+                                  ),
+                                  const SizedBox(
+                                    width: 20.0,
+                                  ),
+                                  DebugSocialMedia(
+                                    color: Color(0xff8b26ce),
+                                    url:
+                                        "https://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Instagram-icon.png",
+                                    label: "deniansyah93",
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          right: 100,
+                          top: 40,
+                          bottom: 10,
+                          width: 362.0,
+                          child: Container(
+                            padding: EdgeInsets.only(
+                              top: 50.0,
+                              left: 8.0,
+                              right: 8.0,
+                              bottom: 8.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8.0),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  blurRadius: 12,
+                                  offset: Offset(0, 11),
+                                ),
+                              ],
+                            ),
+                            child: Container(
+                              height: 100,
+                              width: 100,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(8.0),
+                                ),
+                              ),
+                              child: child!,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ) ??
+                  Container(
+                    width: 0,
+                    height: 0,
+                  ),
+            ),
           Positioned(
             right: -8,
             bottom: 100,
             child: Container(
               width: 30.0,
-              padding: const EdgeInsets.all(6.0),
-              decoration: const BoxDecoration(
+              padding: EdgeInsets.all(6.0),
+              decoration: BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.all(
                   Radius.circular(
@@ -46,19 +239,30 @@ class DebugView extends StatefulWidget {
                 children: [
                   InkWell(
                     onTap: () => Get.back(),
-                    child: const Icon(
+                    child: Icon(
                       Icons.arrow_back,
                       color: Colors.white,
                       size: 12.0,
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 12.0,
                   ),
                   InkWell(
                     onTap: () => Get.to(HUIWidgetDemoView()),
-                    child: const Icon(
+                    child: Icon(
                       Icons.widgets,
+                      color: Colors.white,
+                      size: 12.0,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12.0,
+                  ),
+                  InkWell(
+                    onTap: () => controller.updatePreviewMode(),
+                    child: Icon(
+                      Icons.laptop_windows_outlined,
                       color: Colors.white,
                       size: 12.0,
                     ),

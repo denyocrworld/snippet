@@ -1,5 +1,6 @@
 import 'package:hyper_ui/core.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CgMainController extends State<CgMainView> {
   static late CgMainController instance;
@@ -9,6 +10,16 @@ class CgMainController extends State<CgMainView> {
   @override
   void initState() {
     instance = this;
+    loadScroll();
+    scrollController.addListener(() {
+      if (scrollController.hasClients) {
+        saveScroll();
+      }
+    });
+
+    Future.delayed(Duration(milliseconds: 300), () {
+      scrollController.jumpTo(offset);
+    });
     super.initState();
   }
 
@@ -35,5 +46,17 @@ class CgMainController extends State<CgMainView> {
   updateSidebarState() {
     expanded = !expanded;
     setState(() {});
+  }
+
+  double offset = 0;
+  ScrollController scrollController = ScrollController();
+  loadScroll() async {
+    final prefs = await SharedPreferences.getInstance();
+    offset = prefs.getDouble("offset") ?? 0;
+  }
+
+  saveScroll() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setDouble("offset", scrollController.offset);
   }
 }
