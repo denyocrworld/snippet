@@ -1,21 +1,22 @@
-/*
-//#GROUP_TEMPLATE class
-//#TEMPLATE class_service
 import 'package:dio/dio.dart';
+
+import '../../shared/util/dio_helper/dio_helper.dart';
+
+final defaultOptions = Options(
+  headers: {
+    'Content-Type': 'application/json',
+  },
+);
 
 class TodoService {
   Future<List<Map<String, dynamic>>> get() async {
-    final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/todos';
+    final String url =
+        'https://capekngoding.com/demo/api/todos/12312/31231/12323';
 
     try {
       final response = await dio.get(
         url,
-        options: Options(
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        ),
+        options: defaultOptions,
       );
 
       return List<Map<String, dynamic>>.from(response.data['data']);
@@ -25,8 +26,7 @@ class TodoService {
   }
 
   Future<Map<String, dynamic>> getById(int id) async {
-    final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/todos/$id';
+    final String url = 'https://capekngoding.com/demo/api/todos/id';
 
     try {
       final response = await dio.get(
@@ -45,7 +45,6 @@ class TodoService {
   }
 
   Future<Map<String, dynamic>> create(Map<String, dynamic> data) async {
-    final Dio dio = Dio();
     final String url = 'https://capekngoding.com/alex/api/todos';
 
     try {
@@ -66,8 +65,7 @@ class TodoService {
   }
 
   Future<Map<String, dynamic>> update(int id, Map<String, dynamic> data) async {
-    final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/todos/$id';
+    final String url = 'https://capekngoding.com/demo/api/todos/id';
 
     try {
       final response = await dio.put(
@@ -87,8 +85,7 @@ class TodoService {
   }
 
   Future<void> delete(int id) async {
-    final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/todos/$id';
+    final String url = 'https://capekngoding.com/demo/api/todos/id';
 
     try {
       await dio.delete(
@@ -105,7 +102,6 @@ class TodoService {
   }
 
   Future<void> deleteAll() async {
-    final Dio dio = Dio();
     final String url =
         'https://capekngoding.com/demo/api/todos/action/delete-all';
 
@@ -123,5 +119,3 @@ class TodoService {
     }
   }
 }
-//#END
-*/

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/service/local_data_service/local_data_service.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -12,48 +13,41 @@ class LoginView extends StatefulWidget {
         title: const Text("Login"),
         actions: const [],
       ),
-      body: Container(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    QTextField(
-                      label: "Email",
-                      hint: "Your email",
-                      validator: Validator.email,
-                      suffixIcon: Icons.email,
-                      value: "demo@gmail.com",
-                      onChanged: (value) {},
-                    ),
-                    QTextField(
-                      label: "Password",
-                      hint: "Your password",
-                      obscure: true,
-                      validator: Validator.required,
-                      suffixIcon: Icons.password,
-                      value: "123456",
-                      onChanged: (value) {},
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    ElevatedButton.icon(
-                      icon: const Icon(Icons.login),
-                      label: const Text("Login"),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueGrey,
-                      ),
-                      onPressed: () {},
-                    ),
-                  ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(30.0),
+          child: Form(
+            key: controller.formKey,
+            child: Column(
+              children: [
+                QTextField(
+                  label: "Email",
+                  validator: Validator.email,
+                  suffixIcon: Icons.email,
+                  value: controller.email,
+                  onChanged: (value) {
+                    controller.email = value;
+                    DB.set("email", value);
+                  },
                 ),
-              ),
+                QTextField(
+                  label: "Password",
+                  obscure: true,
+                  validator: Validator.required,
+                  suffixIcon: Icons.password,
+                  value: controller.password,
+                  onChanged: (value) {
+                    controller.password = value;
+                    DB.set("password", value);
+                  },
+                ),
+                QButton(
+                  label: "Login",
+                  onPressed: () => controller.doLogin(),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

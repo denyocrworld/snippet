@@ -1,25 +1,45 @@
+// To parse this JSON data, do
+//
+//     final user = userFromJson(jsonString);
+
+import 'dart:convert';
+
+User userFromJson(String str) => User.fromJson(json.decode(str));
+
+String userToJson(User data) => json.encode(data.toJson());
+
 class User {
   int? id;
+  String? photo;
+  String? name;
   String? email;
-  String? firstName;
-  String? lastName;
-  String? avatar;
+  String? role;
+  String? token;
 
-  User({this.id, this.email, this.firstName, this.lastName, this.avatar});
+  User({
+    this.id,
+    this.photo,
+    this.name,
+    this.email,
+    this.role,
+    this.token,
+  });
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-        id: json['id'] as int?,
-        email: json['email'] as String?,
-        firstName: json['first_name'] as String?,
-        lastName: json['last_name'] as String?,
-        avatar: json['avatar'] as String?,
+        id: json["id"],
+        photo: json["photo"],
+        name: json["name"],
+        email: json["email"],
+        role: json["role"],
+        token: json["token"],
       );
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'email': email,
-        'first_name': firstName,
-        'last_name': lastName,
-        'avatar': avatar,
+        "id": id,
+        "photo": photo,
+        "name": name,
+        "email": email,
+        "role": role,
+        "token": token,
       };
 }

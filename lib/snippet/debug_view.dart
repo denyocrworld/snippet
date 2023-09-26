@@ -1,9 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-
-import '../../../shared/widget/other/downloadable/downloadable.dart';
-import '../widget/debug_social_media.dart';
+import 'package:hyper_ui/module/debug/widget/debug_popinput.dart';
 
 class DebugView extends StatefulWidget {
   final BuildContext context;
@@ -61,30 +59,39 @@ class DebugView extends StatefulWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       FittedBox(
-                                        child: Text(
-                                          controller.tag,
-                                          textAlign: TextAlign.left,
-                                          style: GoogleFonts.robotoCondensed(
-                                            fontSize: 128.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
+                                        child: DebugPopInput(
+                                          value: controller.tag,
+                                          onSubmitted: (value) async {
+                                            controller.tag = value;
+                                            controller.setState(() {});
+                                          },
+                                          child: Text(
+                                            controller.tag,
+                                            textAlign: TextAlign.left,
+                                            style: GoogleFonts.robotoCondensed(
+                                              fontSize: 128.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () async {
-                                    await DownloadableState.instance.capture();
-                                  },
-                                  child: Container(
-                                    width: 1000.0,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        FittedBox(
+                                Container(
+                                  width: 1000.0,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      FittedBox(
+                                        child: DebugPopInput(
+                                          value: controller.title,
+                                          onSubmitted: (value) async {
+                                            controller.title = value;
+                                            controller.setState(() {});
+                                          },
                                           child: Text(
                                             controller.title,
                                             textAlign: TextAlign.left,
@@ -95,8 +102,8 @@ class DebugView extends StatefulWidget {
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 Container(
@@ -106,13 +113,20 @@ class DebugView extends StatefulWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       FittedBox(
-                                        child: Text(
-                                          controller.subtitle,
-                                          textAlign: TextAlign.left,
-                                          style: GoogleFonts.robotoCondensed(
-                                            fontSize: 128.0,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
+                                        child: DebugPopInput(
+                                          value: controller.subtitle,
+                                          onSubmitted: (value) async {
+                                            controller.subtitle = value;
+                                            controller.setState(() {});
+                                          },
+                                          child: Text(
+                                            controller.subtitle,
+                                            textAlign: TextAlign.left,
+                                            style: GoogleFonts.robotoCondensed(
+                                              fontSize: 128.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -131,11 +145,17 @@ class DebugView extends StatefulWidget {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  DebugSocialMedia(
-                                    color: Color(0xffd32322),
-                                    url:
-                                        "https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png",
-                                    label: "@CapekNgoding",
+                                  InkWell(
+                                    onTap: () async {
+                                      await DownloadableState.instance
+                                          .capture();
+                                    },
+                                    child: DebugSocialMedia(
+                                      color: Color(0xffd32322),
+                                      url:
+                                          "https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png",
+                                      label: "@CapekNgoding",
+                                    ),
                                   ),
                                   const SizedBox(
                                     width: 20.0,

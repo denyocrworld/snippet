@@ -319,7 +319,21 @@ class CgMainView extends StatefulWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("MagicBook"),
+        title: Row(
+          children: [
+            InkWell(
+              onTap: () => Get.to(TutorialView()),
+              child: Text("MagicBook"),
+            ),
+            const SizedBox(
+              width: 12.0,
+            ),
+            InkWell(
+              onTap: () => Get.to(TutorialCustomerView()),
+              child: Text("Customers"),
+            ),
+          ],
+        ),
       ),
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
@@ -352,6 +366,13 @@ class CgMainView extends StatefulWidget {
               SideMenu(
                 menuList: cgMainService.slicingUiRandomMenuList,
                 title: "Slicing UI Random",
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              SideMenu(
+                menuList: cgMainService.suiELearningList,
+                title: "Slicing UI ELearning",
               ),
               const SizedBox(
                 height: 20.0,

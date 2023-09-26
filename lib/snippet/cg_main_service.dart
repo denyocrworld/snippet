@@ -133,6 +133,12 @@ class CgMainService {
       'page': CgGridView(),
     },
     {
+      'label': 'CalendarView',
+      'icon': MdiIcons.calendar,
+      'color': Colors.cyan,
+      'page': CgCalendarView(),
+    },
+    {
       'label': 'Wrap',
       'icon': MdiIcons.wrap,
       'color': Colors.cyan,
@@ -540,6 +546,26 @@ class CgMainService {
       'icon': MdiIcons.loginVariant,
       'color': Colors.blue,
       'page': TdDashboardView(),
+    },
+  ];
+  List<Map> suiELearningList = [
+    {
+      'label': 'Welcome',
+      'icon': MdiIcons.loginVariant,
+      'color': Colors.red,
+      'page': ElearningWelcomeView(),
+    },
+    {
+      'label': 'Dashboard',
+      'icon': MdiIcons.loginVariant,
+      'color': Colors.green,
+      'page': ElearningDashboardView(),
+    },
+    {
+      'label': 'Course Detail',
+      'icon': MdiIcons.loginVariant,
+      'color': Colors.blue,
+      'page': ElearningCourseDetailView(),
     },
   ];
 

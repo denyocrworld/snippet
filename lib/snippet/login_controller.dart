@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../view/login_view.dart';
+
+import '../../../../service/local_data_service/local_data_service.dart';
 
 class LoginController extends State<LoginView> {
   static late LoginController instance;
@@ -9,6 +10,8 @@ class LoginController extends State<LoginView> {
   @override
   void initState() {
     instance = this;
+    email = DB.get("email");
+    password = DB.get("password");
     super.initState();
   }
 
@@ -17,4 +20,28 @@ class LoginController extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  String? email;
+  String? password;
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  doLogin() async {
+    bool isNotValid = formKey.currentState!.validate() == false;
+    if (isNotValid) {
+      return;
+    }
+
+    showLoading();
+    await AuthService().login(
+      email: email!,
+      password: password!,
+    );
+    hideLoading();
+
+    if (AuthService.currentUser!.role == "admin") {
+      Get.offAll(AdminDashboardView());
+    } else if (AuthService.currentUser!.role == "customer") {
+      Get.offAll(CustomerDashboardView());
+    }
+  }
 }

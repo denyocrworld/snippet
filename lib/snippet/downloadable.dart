@@ -29,7 +29,7 @@ class DownloadableState extends State<Downloadable> {
     screenshotController.capture().then((Uint8List? image) {
       _imageFile = image;
       File.fromRawPath(_imageFile!);
-      File("tmp/$name.png").writeAsBytesSync(_imageFile!);
+      File("__tmp/$name.png").writeAsBytesSync(_imageFile!);
       setState(() {});
     }).catchError((onError) {
       print(onError);

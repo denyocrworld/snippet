@@ -152,6 +152,10 @@ class CrudModuleManagerListView extends StatefulWidget {
                                           validator: Validator.required,
                                           value: field["field_name"],
                                           onChanged: (value) {},
+                                          onSubmitted: (value) {
+                                            field["field_name"] = value;
+                                            controller.save();
+                                          },
                                         ),
                                       ),
                                       const SizedBox(
@@ -184,8 +188,11 @@ class CrudModuleManagerListView extends StatefulWidget {
                                               "value": "timestamp",
                                             }
                                           ],
-                                          value: "int",
-                                          onChanged: (value, label) {},
+                                          value: field["type"] ?? "int",
+                                          onChanged: (value, label) {
+                                            field["type"] = value;
+                                            controller.save();
+                                          },
                                         ),
                                       ),
                                       const SizedBox(
@@ -206,8 +213,11 @@ class CrudModuleManagerListView extends StatefulWidget {
                                               "value": "no",
                                             },
                                           ],
-                                          value: "yes",
-                                          onChanged: (value, label) {},
+                                          value: field["nullable"] ?? "yes",
+                                          onChanged: (value, label) {
+                                            field["nullable"] = value;
+                                            controller.save();
+                                          },
                                         ),
                                       ),
                                       const SizedBox(
@@ -240,8 +250,12 @@ class CrudModuleManagerListView extends StatefulWidget {
                                               "value": "image_picker",
                                             }
                                           ],
-                                          value: "textfield",
-                                          onChanged: (value, label) {},
+                                          value:
+                                              field["form_type"] ?? "textfield",
+                                          onChanged: (value, label) {
+                                            field["form_type"] = value;
+                                            controller.save();
+                                          },
                                         ),
                                       ),
                                       const SizedBox(

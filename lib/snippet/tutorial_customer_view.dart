@@ -1,32 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/tutorial/widget/super_grid_view.dart';
 
-class TutorialView extends StatefulWidget {
-  TutorialView({
-    Key? key,
-  }) : super(key: key);
+class TutorialCustomerView extends StatefulWidget {
+  TutorialCustomerView({Key? key}) : super(key: key);
 
-  Widget build(context, TutorialController controller) {
+  Widget build(context, TutorialCustomerController controller) {
     controller.view = this;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Paging Example"),
-        actions: [
-          IconButton(
-            onPressed: () => controller.generateDummies(),
-            icon: const Icon(
-              Icons.data_array,
-              size: 24.0,
-            ),
-          ),
-        ],
+        title: Text("TutorialCustomer"),
+        actions: [],
       ),
-      body: SuperListView(
-        // mode: Mode.gridView,
-        // mode: Mode.listView,
+      body: SuperGridView(
         onLoading: (page) async {
-          var list = await TutorialProductService().getProducts(page: page);
+          var list = await TutorialCustomerService().getCustomers(page: page);
           return list;
         },
         itemBuilder: (context, index, item) {
@@ -52,24 +41,15 @@ class TutorialView extends StatefulWidget {
                   ),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 4.0,
               ),
               Text(
-                item["product_name"],
+                item["name"],
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 14.0,
                   fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(
-                height: 4.0,
-              ),
-              Text(
-                "${item["price"]}",
-                style: TextStyle(
-                  fontSize: 16.0,
                 ),
               ),
             ],
@@ -80,5 +60,5 @@ class TutorialView extends StatefulWidget {
   }
 
   @override
-  State<TutorialView> createState() => TutorialController();
+  State<TutorialCustomerView> createState() => TutorialCustomerController();
 }

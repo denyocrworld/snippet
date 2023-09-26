@@ -1,7 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/tutorial/service/tutorial_customer_service.dart';
+import 'package:hyper_ui/module/tutorial/service/tutorial_product_service.dart';
 
 class TutorialController extends State<TutorialView> {
   static late TutorialController instance;
@@ -10,28 +10,22 @@ class TutorialController extends State<TutorialView> {
   @override
   void initState() {
     instance = this;
+
     super.initState();
   }
 
   @override
   void dispose() {
-    timer.cancel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
 
-  double progress = 0.0;
-  late Timer timer;
-  start() async {
-    timer = Timer.periodic(Duration(milliseconds: 50), (timer) {
-      progress += 0.02;
-      setState(() {});
-
-      if (progress == 1.0) {
-        timer.cancel();
-      }
-    });
+  generateDummies() async {
+    showLoading();
+    await TutorialProductService().generateProducts();
+    await TutorialCustomerService().generateCustomers();
+    hideLoading();
   }
 }

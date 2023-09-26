@@ -17,10 +17,14 @@ class CgMainController extends State<CgMainView> {
       }
     });
 
-    Future.delayed(Duration(milliseconds: 300), () {
-      scrollController.jumpTo(offset);
-    });
+    WidgetsBinding.instance.addPostFrameCallback((_) => onReady());
     super.initState();
+  }
+
+  void onReady() {
+    // Future.delayed(Duration(milliseconds: 300), () {
+    //   scrollController.jumpTo(offset);
+    // });
   }
 
   @override
