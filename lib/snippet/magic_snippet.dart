@@ -26,7 +26,7 @@ color: warningColor,
 //#TEMPLATE cinfo
 color: infoColor,
 //#END
-//#TEMPLATE ctext
+//#TEMPLATE ctex
 color: textColor,
 //#END
     */
