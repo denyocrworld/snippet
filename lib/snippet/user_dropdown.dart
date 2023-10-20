@@ -1,3 +1,4 @@
+//#TEMPLATE reuseable_user_dropdown_controller
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hyper_ui/core.dart';
@@ -74,3 +75,5 @@ class QUserDropdown extends StatefulWidget {
   @override
   State<QUserDropdown> createState() => QUserDropdownController();
 }
+
+//#END

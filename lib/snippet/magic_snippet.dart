@@ -8,25 +8,25 @@ class MagicSnippetView extends StatelessWidget {
 
   test() {
     /*
-//#TEMPLATE cpc
+//#TEMPLATE cpri
 color: primaryColor,
 //#END
-//#TEMPLATE cpc
+//#TEMPLATE csec
 color: secondaryColor,
 //#END
-//#TEMPLATE cpc
+//#TEMPLATE csuc
 color: successColor,
 //#END
-//#TEMPLATE cpc
+//#TEMPLATE cdan
 color: dangerColor,
 //#END
-//#TEMPLATE cpc
+//#TEMPLATE cwar
 color: warningColor,
 //#END
-//#TEMPLATE cpc
+//#TEMPLATE cinfo
 color: infoColor,
 //#END
-//#TEMPLATE cpc
+//#TEMPLATE ctext
 color: textColor,
 //#END
     */
