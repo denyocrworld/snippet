@@ -1,6 +1,6 @@
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
 import '../controller/cg_calendar_controller.dart';
 
 class CgCalendarView extends StatefulWidget {

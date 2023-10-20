@@ -547,6 +547,12 @@ class CgMainService {
       'color': Colors.blue,
       'page': TdDashboardView(),
     },
+    {
+      'label': 'Chat List',
+      'icon': MdiIcons.loginVariant,
+      'color': Colors.blue,
+      'page': RandomChatListView(),
+    },
   ];
   List<Map> suiELearningList = [
     {
@@ -566,6 +572,12 @@ class CgMainService {
       'icon': MdiIcons.loginVariant,
       'color': Colors.blue,
       'page': ElearningCourseDetailView(),
+    },
+    {
+      'label': 'Zapp',
+      'icon': MdiIcons.loginVariant,
+      'color': Colors.blue,
+      'page': ZappMainNavigationView(),
     },
   ];
 

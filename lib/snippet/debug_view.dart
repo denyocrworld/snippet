@@ -17,6 +17,12 @@ class DebugView extends StatefulWidget {
 
   Widget build(context, DebugController controller) {
     controller.view = this;
+    if (controller.loading)
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
 
     if (child == null) return Container();
     if (!visible) return Container();
@@ -34,7 +40,7 @@ class DebugView extends StatefulWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
-                          "https://i.ibb.co/mSn8dfP/Dark-Blue-White-Brush-Stroke-Business-Ideas-You-Tube-Thumbnail-30.png",
+                          controller.background,
                         ),
                         fit: BoxFit.fitWidth,
                       ),
@@ -46,33 +52,34 @@ class DebugView extends StatefulWidget {
                           child: Container(
                             margin: EdgeInsets.only(
                               left: 100.0,
-                              bottom: 180.0,
+                              bottom: 80.0,
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: 300.0,
+                                  width: MediaQuery.of(context).size.width,
+                                  transform:
+                                      Matrix4.translationValues(0.0, 20, 0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      FittedBox(
-                                        child: DebugPopInput(
-                                          value: controller.tag,
-                                          onSubmitted: (value) async {
-                                            controller.tag = value;
-                                            controller.setState(() {});
-                                          },
-                                          child: Text(
-                                            controller.tag,
-                                            textAlign: TextAlign.left,
-                                            style: GoogleFonts.robotoCondensed(
-                                              fontSize: 128.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white,
-                                            ),
+                                      DebugPopInput(
+                                        value: controller.tag,
+                                        onSubmitted: (value) async {
+                                          controller.tag = value;
+                                          controller.setState(() {});
+                                          controller.saveConfig();
+                                        },
+                                        child: Text(
+                                          controller.tag,
+                                          textAlign: TextAlign.left,
+                                          style: GoogleFonts.robotoCondensed(
+                                            fontSize: 60.0 * controller.factor,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -85,21 +92,20 @@ class DebugView extends StatefulWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      FittedBox(
-                                        child: DebugPopInput(
-                                          value: controller.title,
-                                          onSubmitted: (value) async {
-                                            controller.title = value;
-                                            controller.setState(() {});
-                                          },
-                                          child: Text(
-                                            controller.title,
-                                            textAlign: TextAlign.left,
-                                            style: GoogleFonts.robotoCondensed(
-                                              fontSize: 164.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Color(0xffffcd25),
-                                            ),
+                                      DebugPopInput(
+                                        value: controller.title,
+                                        onSubmitted: (value) async {
+                                          controller.title = value;
+                                          controller.setState(() {});
+                                          controller.saveConfig();
+                                        },
+                                        child: Text(
+                                          controller.title,
+                                          textAlign: TextAlign.left,
+                                          style: GoogleFonts.robotoCondensed(
+                                            fontSize: 132.0 * controller.factor,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xffffcd25),
                                           ),
                                         ),
                                       ),
@@ -107,26 +113,27 @@ class DebugView extends StatefulWidget {
                                   ),
                                 ),
                                 Container(
-                                  width: 160.0,
+                                  width: MediaQuery.of(context).size.width,
+                                  transform:
+                                      Matrix4.translationValues(0.0, -20, 0),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      FittedBox(
-                                        child: DebugPopInput(
-                                          value: controller.subtitle,
-                                          onSubmitted: (value) async {
-                                            controller.subtitle = value;
-                                            controller.setState(() {});
-                                          },
-                                          child: Text(
-                                            controller.subtitle,
-                                            textAlign: TextAlign.left,
-                                            style: GoogleFonts.robotoCondensed(
-                                              fontSize: 128.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.white,
-                                            ),
+                                      DebugPopInput(
+                                        value: controller.subtitle,
+                                        onSubmitted: (value) async {
+                                          controller.subtitle = value;
+                                          controller.setState(() {});
+                                          controller.saveConfig();
+                                        },
+                                        child: Text(
+                                          controller.subtitle,
+                                          textAlign: TextAlign.left,
+                                          style: GoogleFonts.robotoCondensed(
+                                            fontSize: 60.0 * controller.factor,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -137,64 +144,65 @@ class DebugView extends StatefulWidget {
                             ),
                           ),
                         ),
-                        Positioned(
-                          left: 100.0,
-                          bottom: 100.0,
-                          child: Column(
-                            children: [
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InkWell(
-                                    onTap: () async {
-                                      await DownloadableState.instance
-                                          .capture();
-                                    },
-                                    child: DebugSocialMedia(
-                                      color: Color(0xffd32322),
-                                      url:
-                                          "https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png",
-                                      label: "@CapekNgoding",
+                        if (controller.socialMedia)
+                          Positioned(
+                            left: 100.0,
+                            bottom: 100.0,
+                            child: Column(
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    InkWell(
+                                      onTap: () async {
+                                        await DownloadableState.instance
+                                            .capture();
+                                      },
+                                      child: DebugSocialMedia(
+                                        color: Color(0xffd32322),
+                                        url:
+                                            "https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png",
+                                        label: "@CapekNgoding",
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    width: 20.0,
-                                  ),
-                                  DebugSocialMedia(
-                                    color: Colors.black,
-                                    url:
-                                        "https://icons.iconarchive.com/icons/arturo-wibawa/akar/256/tiktok-icon.png",
-                                    label: "@CodingWithDeny",
-                                    iconColor: Colors.white,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 12.0,
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  DebugSocialMedia(
-                                    color: Color(0xff1d93d5),
-                                    url:
-                                        "https://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Linkedin-icon.png",
-                                    label: "Deny Ocr",
-                                  ),
-                                  const SizedBox(
-                                    width: 20.0,
-                                  ),
-                                  DebugSocialMedia(
-                                    color: Color(0xff8b26ce),
-                                    url:
-                                        "https://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Instagram-icon.png",
-                                    label: "deniansyah93",
-                                  ),
-                                ],
-                              ),
-                            ],
+                                    const SizedBox(
+                                      width: 20.0,
+                                    ),
+                                    DebugSocialMedia(
+                                      color: Colors.black,
+                                      url:
+                                          "https://icons.iconarchive.com/icons/arturo-wibawa/akar/256/tiktok-icon.png",
+                                      label: "@CodingWithDeny",
+                                      iconColor: Colors.white,
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 12.0,
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    DebugSocialMedia(
+                                      color: Color(0xff1d93d5),
+                                      url:
+                                          "https://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Linkedin-icon.png",
+                                      label: "Deny Ocr",
+                                    ),
+                                    const SizedBox(
+                                      width: 20.0,
+                                    ),
+                                    DebugSocialMedia(
+                                      color: Color(0xff8b26ce),
+                                      url:
+                                          "https://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Instagram-icon.png",
+                                      label: "deniansyah93",
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
                         Positioned(
                           right: 100,
                           top: 40,
@@ -241,6 +249,40 @@ class DebugView extends StatefulWidget {
                     height: 0,
                   ),
             ),
+          if (controller.previewMode)
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  QButton(
+                    width: 140.0,
+                    label: "Screenshot",
+                    size: sm,
+                    onPressed: () async {
+                      await DownloadableState.instance.capture();
+                    },
+                  ),
+                  const SizedBox(
+                    width: 12.0,
+                  ),
+                  QButton(
+                    width: 140.0,
+                    label: "Background",
+                    size: sm,
+                    onPressed: () => controller.updateBackground(),
+                  ),
+                  const SizedBox(
+                    width: 12.0,
+                  ),
+                  QButton(
+                    width: 140.0,
+                    label: "SocialMedia",
+                    size: sm,
+                    onPressed: () => controller.updateSocialMedia(),
+                  ),
+                ],
+              ),
+            ),
           Positioned(
             right: -8,
             bottom: 100,
@@ -272,6 +314,17 @@ class DebugView extends StatefulWidget {
                     onTap: () => Get.to(HUIWidgetDemoView()),
                     child: Icon(
                       Icons.widgets,
+                      color: Colors.white,
+                      size: 12.0,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12.0,
+                  ),
+                  InkWell(
+                    onTap: () => controller.refresh(),
+                    child: Icon(
+                      Icons.refresh,
                       color: Colors.white,
                       size: 12.0,
                     ),

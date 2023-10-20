@@ -293,7 +293,7 @@ class ElearningDashboardView extends StatefulWidget {
                           Radius.circular(12.0),
                         ),
                       ),
-                      width: MediaQuery.of(context).size.width * 0.7,
+                      width: 200.0,
                       child: Row(
                         children: [
                           Container(

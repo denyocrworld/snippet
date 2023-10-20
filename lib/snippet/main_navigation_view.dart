@@ -14,10 +14,10 @@ class MainNavigationView extends StatefulWidget {
         body: IndexedStack(
           index: controller.selectedIndex,
           children: [
-            DashboardView(),
-            OrderView(),
-            FavoriteView(),
-            ProfileView(),
+            // DashboardView(),
+            // OrderView(),
+            // FavoriteView(),
+            // ProfileView(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

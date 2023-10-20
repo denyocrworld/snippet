@@ -58,7 +58,6 @@ class _MainAppState extends State<MainApp> with WidgetsBindingObserver {
       navigatorKey: Get.navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: getDefaultTheme(),
-      // theme: getDarkTheme(),
       home: CgMainView(
         oldMenu: true,
       ),

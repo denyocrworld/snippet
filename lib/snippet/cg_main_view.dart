@@ -321,17 +321,7 @@ class CgMainView extends StatefulWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            InkWell(
-              onTap: () => Get.to(TutorialView()),
-              child: Text("MagicBook"),
-            ),
-            const SizedBox(
-              width: 12.0,
-            ),
-            InkWell(
-              onTap: () => Get.to(TutorialCustomerView()),
-              child: Text("Customers"),
-            ),
+            Text("MagicBook"),
           ],
         ),
       ),
@@ -341,7 +331,16 @@ class CgMainView extends StatefulWidget {
         child: Padding(
           padding: EdgeInsets.all(20.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              InkWell(
+                onTap: () => Get.to(TutorialView()),
+                child: const Icon(
+                  Icons.circle,
+                  size: 14.0,
+                  color: Colors.green,
+                ),
+              ),
               SideMenu(
                 menuList: cgMainService.menuList,
                 title: "Basic",

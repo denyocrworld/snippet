@@ -34,6 +34,9 @@ class DebugPopInput extends StatelessWidget {
             TextFormField(
               initialValue: input,
               focusNode: focusNode,
+              onChanged: (value) {
+                input = value;
+              },
               onFieldSubmitted: (value) {
                 input = value;
                 Get.back();
