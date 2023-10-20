@@ -118,7 +118,7 @@ class CgGrid2View extends StatefulWidget {
                   },
                 );
               }),
-
+              //#END
               const SizedBox(
                 height: 20.0,
               ),
