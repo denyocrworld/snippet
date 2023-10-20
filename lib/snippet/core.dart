@@ -6,6 +6,7 @@ it means you have to rename it to something more unique.
 export 'package:hyper_ui/config.dart';
 export 'package:hyper_ui/core_package.dart';
 export 'package:hyper_ui/demo.dart';
+export 'package:hyper_ui/example.dart';
 export 'package:hyper_ui/model/user/user.dart';
 export 'package:hyper_ui/module/admin/admin_dashboard/controller/admin_dashboard_controller.dart';
 export 'package:hyper_ui/module/admin/admin_dashboard/view/admin_dashboard_view.dart';
@@ -175,6 +176,8 @@ export 'package:hyper_ui/module/snippet/cg_get/snippet/common.dart';
 export 'package:hyper_ui/module/snippet/cg_get/view/cg_get_view.dart';
 export 'package:hyper_ui/module/snippet/cg_grid/controller/cg_grid_controller.dart';
 export 'package:hyper_ui/module/snippet/cg_grid/view/cg_grid_view.dart';
+export 'package:hyper_ui/module/snippet/cg_grid2/controller/cg_grid2_controller.dart';
+export 'package:hyper_ui/module/snippet/cg_grid2/view/cg_grid2_view.dart';
 export 'package:hyper_ui/module/snippet/cg_hotkey/controller/cg_hotkey_controller.dart';
 export 'package:hyper_ui/module/snippet/cg_hotkey/service/cg_hotkey_service.dart';
 export 'package:hyper_ui/module/snippet/cg_hotkey/view/cg_hotkey_view.dart';

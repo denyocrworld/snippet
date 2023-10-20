@@ -133,6 +133,12 @@ class CgMainService {
       'page': CgGridView(),
     },
     {
+      'label': 'GridView2',
+      'icon': MdiIcons.viewGridPlus,
+      'color': Colors.cyan,
+      'page': CgGrid2View(),
+    },
+    {
       'label': 'CalendarView',
       'icon': MdiIcons.calendar,
       'color': Colors.cyan,
