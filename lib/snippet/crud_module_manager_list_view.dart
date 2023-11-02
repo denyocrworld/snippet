@@ -326,7 +326,9 @@ class CrudModuleManagerListView extends StatefulWidget {
                                                 label: "Name",
                                                 validator: Validator.required,
                                                 value: relation["name"],
-                                                onChanged: (value) {},
+                                                onChanged: (value) {
+                                                  relation['name'] = value;
+                                                },
                                               ),
                                             ),
                                             const SizedBox(
@@ -348,7 +350,9 @@ class CrudModuleManagerListView extends StatefulWidget {
                                                   }
                                                 ],
                                                 value: relation["type"],
-                                                onChanged: (value, label) {},
+                                                onChanged: (value, label) {
+                                                  relation['type'] = value;
+                                                },
                                               ),
                                             ),
                                             const SizedBox(
@@ -360,7 +364,9 @@ class CrudModuleManagerListView extends StatefulWidget {
                                                 label: "Table",
                                                 validator: Validator.required,
                                                 value: relation["table"],
-                                                onChanged: (value) {},
+                                                onChanged: (value) {
+                                                  relation['table'] = value;
+                                                },
                                               ),
                                             ),
                                             const SizedBox(
@@ -372,7 +378,9 @@ class CrudModuleManagerListView extends StatefulWidget {
                                                 label: "Table",
                                                 validator: Validator.required,
                                                 value: relation["field"],
-                                                onChanged: (value) {},
+                                                onChanged: (value) {
+                                                  relation['field'] = value;
+                                                },
                                               ),
                                             ),
                                             const SizedBox(

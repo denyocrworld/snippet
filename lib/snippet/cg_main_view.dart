@@ -333,13 +333,29 @@ class CgMainView extends StatefulWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InkWell(
-                onTap: () => Get.to(TutorialView()),
-                child: const Icon(
-                  Icons.circle,
-                  size: 14.0,
-                  color: Colors.green,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () => Get.to(TutorialView()),
+                    child: const Icon(
+                      Icons.circle,
+                      size: 14.0,
+                      color: Colors.green,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 6.0,
+                  ),
+                  InkWell(
+                    onTap: () => Get.to(CrudModuleManagerListView()),
+                    child: const Icon(
+                      Icons.circle,
+                      size: 14.0,
+                      color: Colors.red,
+                    ),
+                  )
+                ],
               ),
               SideMenu(
                 menuList: cgMainService.menuList,

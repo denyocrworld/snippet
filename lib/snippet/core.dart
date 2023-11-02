@@ -147,6 +147,10 @@ export 'package:hyper_ui/module/snippet/cg_calendar/controller/cg_calendar_contr
 export 'package:hyper_ui/module/snippet/cg_calendar/view/cg_calendar_view.dart';
 export 'package:hyper_ui/module/snippet/cg_card/controller/cg_card_controller.dart';
 export 'package:hyper_ui/module/snippet/cg_card/view/cg_card_view.dart';
+export 'package:hyper_ui/module/snippet/cg_card2/controller/cg_card2_controller.dart';
+export 'package:hyper_ui/module/snippet/cg_card2/view/cg_card2_view.dart';
+export 'package:hyper_ui/module/snippet/cg_card2_statistic/controller/cg_card2_statistic_controller.dart';
+export 'package:hyper_ui/module/snippet/cg_card2_statistic/view/cg_card2_statistic_view.dart';
 export 'package:hyper_ui/module/snippet/cg_carousel/controller/cg_carousel_controller.dart';
 export 'package:hyper_ui/module/snippet/cg_carousel/view/cg_carousel_view.dart';
 export 'package:hyper_ui/module/snippet/cg_chart/controller/cg_chart_controller.dart';
@@ -183,7 +187,6 @@ export 'package:hyper_ui/module/snippet/cg_hotkey/service/cg_hotkey_service.dart
 export 'package:hyper_ui/module/snippet/cg_hotkey/view/cg_hotkey_view.dart';
 export 'package:hyper_ui/module/snippet/cg_http/controller/cg_http_controller.dart';
 export 'package:hyper_ui/module/snippet/cg_http/snippet/dio.dart';
-export 'package:hyper_ui/module/snippet/cg_http/snippet/http.dart';
 export 'package:hyper_ui/module/snippet/cg_http/view/cg_http_view.dart';
 export 'package:hyper_ui/module/snippet/cg_hui_button/controller/cg_hui_button_controller.dart';
 export 'package:hyper_ui/module/snippet/cg_hui_button/view/cg_hui_button_view.dart';
@@ -214,6 +217,8 @@ export 'package:hyper_ui/module/snippet/cg_list_checker/service/cg_list_checker_
 export 'package:hyper_ui/module/snippet/cg_list_checker/view/cg_list_checker_view.dart';
 export 'package:hyper_ui/module/snippet/cg_list_item/controller/cg_list_item_controller.dart';
 export 'package:hyper_ui/module/snippet/cg_list_item/view/cg_list_item_view.dart';
+export 'package:hyper_ui/module/snippet/cg_logo/controller/cg_logo_controller.dart';
+export 'package:hyper_ui/module/snippet/cg_logo/view/cg_logo_view.dart';
 export 'package:hyper_ui/module/snippet/cg_main/controller/cg_main_controller.dart';
 export 'package:hyper_ui/module/snippet/cg_main/service/cg_main_service.dart';
 export 'package:hyper_ui/module/snippet/cg_main/view/cg_main_view.dart';

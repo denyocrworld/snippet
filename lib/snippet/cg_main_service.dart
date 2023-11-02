@@ -91,10 +91,28 @@ class CgMainService {
       'page': CgCardView(),
     },
     {
+      'label': 'Card2',
+      'icon': MdiIcons.cardOutline,
+      'color': Colors.purple,
+      'page': CgCard2View(),
+    },
+    {
+      'label': 'Card2 Statistic',
+      'icon': MdiIcons.cardOutline,
+      'color': Colors.purple,
+      'page': CgCard2StatisticView(),
+    },
+    {
       'label': 'Text',
       'icon': MdiIcons.textBox,
       'color': Colors.orange,
       'page': CgTextView(),
+    },
+    {
+      'label': 'Logo',
+      'icon': MdiIcons.circle,
+      'color': Colors.red,
+      'page': CgLogoView(),
     },
     {
       'label': 'Image',

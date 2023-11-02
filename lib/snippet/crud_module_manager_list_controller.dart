@@ -18,7 +18,10 @@ class CrudModuleManagerListController extends State<CrudModuleManagerListView> {
   }
 
   @override
-  void dispose() => super.dispose();
+  void dispose() {
+    save();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
@@ -105,7 +108,7 @@ class CrudModuleManagerListController extends State<CrudModuleManagerListView> {
   save() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString("modules", jsonEncode(modules));
-    setState(() {});
+    if (mounted) setState(() {});
   }
 
   reset() async {

@@ -1,5 +1,6 @@
 // ignore: unused_element
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:dio/dio.dart';
 
@@ -128,4 +129,66 @@ import "package:dio/dio.dart";
       //#END
     }
   }
+}
+
+//#TEMPLATE class_product
+
+class Product {
+  int? id;
+  String? productName;
+  double? price;
+
+  Product({
+    this.id,
+    this.productName,
+    this.price,
+  });
+
+  factory Product.fromRawJson(String str) => Product.fromJson(json.decode(str));
+
+  String toRawJson() => json.encode(toJson());
+
+  factory Product.fromJson(Map<String, dynamic> json) => Product(
+        id: json["id"],
+        productName: json["product_name"],
+        price: json["price"]?.toDouble(),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "product_name": productName,
+        "price": price,
+      };
+}
+
+//#END
+void sample() async {
+  /*
+  //#TEMPLATE dio_get_model
+  var response = await Dio().get(
+    "https://reqres.in/api/users",
+    options: Options(
+      headers: {
+        "Content-Type": "application/json",
+      },
+    ),
+  );
+  Map obj = response.data;
+  Product item = Product.fromJson(obj);
+  //#END
+
+  //#TEMPLATE dio_get_list_of_model
+  var response = await Dio().get(
+    "https://reqres.in/api/users",
+    options: Options(
+      headers: {
+        "Content-Type": "application/json",
+      },
+    ),
+  );
+  Map obj = response.data;
+  List dataList = obj["data"];
+  List<Product> items = dataList.map((item) => Product.fromJson(item)).toList();
+  //#END
+  */
 }
