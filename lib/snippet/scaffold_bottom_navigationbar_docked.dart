@@ -95,12 +95,12 @@ class TemplateScaffoldBottomNavigationBarDocked extends StatefulWidget {
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Theme.of(context).primaryColor,
-          onPressed: () {
-            // Tambahkan tindakan yang akan dilakukan saat tombol ditekan
-          },
-          child: Icon(Icons.point_of_sale),
+        floatingActionButton: Container(
+          child: FloatingActionButton(
+            backgroundColor: Theme.of(context).primaryColor,
+            onPressed: () {},
+            child: Icon(Icons.point_of_sale),
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
@@ -129,27 +129,4 @@ class TemplateScaffoldBottomNavigationBarDockedController
     selectedIndex = newIndex;
     setState(() {});
   }
-}
-
-class NotchClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final path = Path();
-    final notchWidth = 100.0;
-    final notchHeight = 20.0;
-
-    path.moveTo(0, 0);
-    path.lineTo((size.width - notchWidth) / 2, 0);
-    path.lineTo((size.width - notchWidth) / 2 + notchWidth / 2, notchHeight);
-    path.lineTo((size.width - notchWidth) / 2 + notchWidth, 0);
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height);
-    path.lineTo(0, size.height);
-    path.close();
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

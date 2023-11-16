@@ -24,6 +24,24 @@ class CgMainService {
       'page': TemplateScaffoldBottomNavigationBarDocked(),
     },
     {
+      'label': 'Scaffold Bottom Navigation Bar2',
+      'icon': MdiIcons.devices,
+      'color': Colors.blue,
+      'page': TemplateScaffoldBottomNavigationBar2(),
+    },
+    {
+      'label': 'Scaffold Bottom Navigation Bar3',
+      'icon': MdiIcons.devices,
+      'color': Colors.blue,
+      'page': TemplateScaffoldBottomNavigationBar3(),
+    },
+    {
+      'label': 'Scaffold Bottom Navigation Bar4',
+      'icon': MdiIcons.devices,
+      'color': Colors.blue,
+      'page': TemplateScaffoldBottomNavigationBar4(),
+    },
+    {
       'label': 'Scaffold TabBar',
       'icon': MdiIcons.devices,
       'color': Colors.blue,
