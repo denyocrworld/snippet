@@ -1,6 +1,30 @@
 import 'package:hyper_ui/core.dart';
 import 'package:flutter/material.dart';
 
+/*
+cakeresume.com
+kickstarter.com
+canva 
+
+Basic Pemrograman
+  Variable
+  Operator
+  IF Statement
+  List/Array
+  Looping
+  Function
+  OOP
+  Inhertiance
+  Abstraction
+  Encapsulation
+  Polymorphism
+
+Framework
+  Flutter
+  React
+  Vue
+  NextJS
+*/
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DB.init();

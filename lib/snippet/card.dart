@@ -32,7 +32,7 @@ class QCard extends StatelessWidget {
         ),
         border: Border.all(
           width: 1.0,
-          color: Colors.grey,
+          color: Colors.grey[400]!,
         ),
       ),
       child: Column(
@@ -76,7 +76,7 @@ class QCard extends StatelessWidget {
               ),
             ),
             Divider(
-              color: Colors.grey,
+              color: Colors.grey[400]!,
               height: 1.0,
             ),
           ],

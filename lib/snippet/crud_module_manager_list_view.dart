@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
@@ -34,6 +36,16 @@ class CrudModuleManagerListView extends StatefulWidget {
                   color: dangerColor,
                   prefixIcon: Icons.add,
                   onPressed: () => controller.reset(),
+                ),
+                const SizedBox(
+                  width: 12.0,
+                ),
+                QButton(
+                  width: 180.0,
+                  label: "Export",
+                  color: infoColor,
+                  prefixIcon: Icons.import_export,
+                  onPressed: () => controller.export(),
                 )
               ],
             ),
@@ -151,11 +163,10 @@ class CrudModuleManagerListView extends StatefulWidget {
                                           label: "Name",
                                           validator: Validator.required,
                                           value: field["field_name"],
-                                          onChanged: (value) {},
-                                          onSubmitted: (value) {
+                                          onChanged: (value) {
                                             field["field_name"] = value;
-                                            controller.save();
                                           },
+                                          onSubmitted: (value) {},
                                         ),
                                       ),
                                       const SizedBox(
@@ -323,11 +334,13 @@ class CrudModuleManagerListView extends StatefulWidget {
                                             Container(
                                               width: 200.0,
                                               child: QTextField(
-                                                label: "Name",
+                                                label: "RelationName",
                                                 validator: Validator.required,
-                                                value: relation["name"],
+                                                value:
+                                                    relation["relation_name"],
                                                 onChanged: (value) {
-                                                  relation['name'] = value;
+                                                  relation['relation_name'] =
+                                                      value;
                                                 },
                                               ),
                                             ),
@@ -361,11 +374,12 @@ class CrudModuleManagerListView extends StatefulWidget {
                                             Container(
                                               width: 160,
                                               child: QTextField(
-                                                label: "Table",
+                                                label: "Source Field",
                                                 validator: Validator.required,
-                                                value: relation["table"],
+                                                value: relation["source_field"],
                                                 onChanged: (value) {
-                                                  relation['table'] = value;
+                                                  relation['source_field'] =
+                                                      value;
                                                 },
                                               ),
                                             ),
@@ -375,11 +389,27 @@ class CrudModuleManagerListView extends StatefulWidget {
                                             Container(
                                               width: 160,
                                               child: QTextField(
-                                                label: "Table",
+                                                label: "Target Table",
                                                 validator: Validator.required,
-                                                value: relation["field"],
+                                                value: relation["target_table"],
                                                 onChanged: (value) {
-                                                  relation['field'] = value;
+                                                  relation['target_table'] =
+                                                      value;
+                                                },
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 12.0,
+                                            ),
+                                            Container(
+                                              width: 160,
+                                              child: QTextField(
+                                                label: "Target Field",
+                                                validator: Validator.required,
+                                                value: relation["target_field"],
+                                                onChanged: (value) {
+                                                  relation['target_field'] =
+                                                      value;
                                                 },
                                               ),
                                             ),
@@ -400,7 +430,9 @@ class CrudModuleManagerListView extends StatefulWidget {
                                                 ),
                                                 onPressed: () =>
                                                     controller.removeRelation(
-                                                        item, relation["name"]),
+                                                        item,
+                                                        relation[
+                                                            "relation_name"]),
                                                 child: Icon(
                                                   MdiIcons.close,
                                                   size: 16.0,

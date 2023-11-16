@@ -918,8 +918,9 @@ class CgCard2View extends StatefulWidget {
                 ),
               ),
               //#END
-              SizedBox(
-                height: 500.0,
+
+              const SizedBox(
+                height: 20.0,
               ),
             ],
           ),

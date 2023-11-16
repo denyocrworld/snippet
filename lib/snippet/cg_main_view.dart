@@ -103,12 +103,16 @@ class CgMainView extends StatefulWidget {
                                       CgMainMenuItem(
                                         icon: MdiIcons.palette,
                                         label: "Colors",
-                                        onTap: () {},
+                                        onTap: () => controller.updateView(
+                                          CgColorsView(),
+                                        ),
                                       ),
                                       CgMainMenuItem(
                                         icon: MdiIcons.formatFont,
                                         label: "Typography",
-                                        onTap: () {},
+                                        onTap: () => controller.updateView(
+                                          CgTypographyView(),
+                                        ),
                                       ),
                                       CgMainMenuCategory(
                                         label: "COMPONENTS",
@@ -120,26 +124,36 @@ class CgMainView extends StatefulWidget {
                                         children: [
                                           CgMainMenuItem(
                                             label: "Accordion",
-                                            onTap: () {},
+                                            onTap: () => controller.updateView(
+                                              CgCardView(),
+                                            ),
                                           ),
                                           CgMainMenuItem(
                                             label: "Breadcrumb",
-                                            onTap: () {},
+                                            onTap: () => controller.updateView(
+                                              CgCardView(),
+                                            ),
                                           ),
                                           CgMainMenuItem(
                                             label: "Cards",
-                                            onTap: () {},
+                                            onTap: () => controller.updateView(
+                                              CgCardView(),
+                                            ),
                                           ),
                                           CgMainMenuItem(
                                             label: "Carousel",
-                                            onTap: () {},
+                                            onTap: () => controller.updateView(
+                                              CgCardView(),
+                                            ),
                                           ),
                                         ],
                                       ),
                                       CgMainMenuItem(
                                         icon: MdiIcons.buttonPointer,
                                         label: "Buttons",
-                                        onTap: () {},
+                                        onTap: () => controller.updateView(
+                                          CgButtonView(),
+                                        ),
                                       ),
                                       CgMainMenuItem(
                                         icon: MdiIcons.formTextbox,
@@ -353,6 +367,17 @@ class CgMainView extends StatefulWidget {
                       Icons.circle,
                       size: 14.0,
                       color: Colors.red,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 6.0,
+                  ),
+                  InkWell(
+                    onTap: () => Get.to(CgVotingView()),
+                    child: const Icon(
+                      Icons.circle,
+                      size: 14.0,
+                      color: Colors.orange,
                     ),
                   )
                 ],

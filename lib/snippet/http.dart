@@ -1,3 +1,4 @@
+/*
 //#GROUP_TEMPLATE http
 
 import 'dart:convert';
@@ -116,3 +117,4 @@ import "package:http/http.dart" as http;
     //#END
   }
 }
+*/

@@ -1,5 +1,7 @@
 import 'package:hyper_ui/core.dart';
 import 'package:flutter/material.dart';
+import 'package:hyper_ui/module/snippet/cg_scaffold/_/scaffold_bottom_navigationbar_docked.dart';
+import 'package:hyper_ui/module/snippet/cg_scaffold/_/scaffold_floating_dialog.dart';
 
 class CgMainService {
   List<Map> scaffoldList = [
@@ -14,6 +16,12 @@ class CgMainService {
       'icon': MdiIcons.devices,
       'color': Colors.blue,
       'page': TemplateScaffoldBottomNavigationBar(),
+    },
+    {
+      'label': 'Scaffold Bottom Navigation Bar Docked',
+      'icon': MdiIcons.devices,
+      'color': Colors.blue,
+      'page': TemplateScaffoldBottomNavigationBarDocked(),
     },
     {
       'label': 'Scaffold TabBar',
@@ -44,6 +52,18 @@ class CgMainService {
       'icon': MdiIcons.devices,
       'color': Colors.blue,
       'page': TemplateScaffoldMenubar(),
+    },
+    {
+      'label': 'Scaffold SliverAppbar2',
+      'icon': MdiIcons.devices,
+      'color': Colors.blue,
+      'page': TemplateScaffoldSliverAppbar2(),
+    },
+    {
+      'label': 'Scaffold Floating Dialog',
+      'icon': MdiIcons.devices,
+      'color': Colors.blue,
+      'page': TemplateScaffoldFloatingDialog(),
     },
   ];
 
