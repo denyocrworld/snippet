@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:hyper_ui/core.dart';
 
 class __Something {
   void main() async {
@@ -103,6 +104,29 @@ import "package:dio/dio.dart";
 
       var res = await Dio().post(
         'https://api.imgbb.com/1/upload?key=b55ef3fd02b80ab180f284e479acd7c4',
+        data: formData,
+      );
+
+      var data = res.data["data"];
+      var url = data["url"];
+      //#END
+    }
+
+    {
+      //#TEMPLATE dio_upload_multiple_files
+      List<XFile> files = [];
+      final formData = FormData.fromMap({
+        'files': [
+          for (var file in files)
+            MultipartFile.fromBytes(
+              File(file.path).readAsBytesSync(),
+              filename: file.name,
+            ),
+        ],
+      });
+
+      var res = await Dio().post(
+        'https://example.com/upload',
         data: formData,
       );
 
