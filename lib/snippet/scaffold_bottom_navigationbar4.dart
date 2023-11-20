@@ -68,6 +68,7 @@ class TemplateScaffoldBottomNavigationBar4 extends StatefulWidget {
           children: pages,
         ),
         bottomNavigationBar: BottomAppBar(
+          padding: const EdgeInsets.all(0.0),
           shape: CircularNotchedRectangle(), // Membuat notch
           child: Container(
             height: bottomBarHeight,
