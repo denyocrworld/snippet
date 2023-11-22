@@ -62,7 +62,7 @@ class TemplateScaffoldBottomNavigationBarDocked extends StatefulWidget {
       initialIndex: controller.selectedIndex,
       child: Scaffold(
         body: IndexedStack(
-          index: 0,
+          index: controller.selectedIndex,
           children: pages,
         ),
         bottomNavigationBar: BottomAppBar(

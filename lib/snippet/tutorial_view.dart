@@ -29,6 +29,26 @@ class TutorialView extends StatefulWidget {
     7. C++
     8. Golang
 
+    Bahasa : Dart
+    Framework: Flutter
+    Flutter bisa digunakan untuk membuat Aplikasi:
+    Android, IOS, Web, Desktop
+
+    1. Pelajari Bahasa Pemrograman
+    2. Pelajari Framework-nya
+    3. Perbanyak Latihan
+      - Perbanyak Latihan Bikin UI
+      - Perbanyak Latihan Integrasi ke API
+    4. Buat Portofolio    
+      - 5 UI Aplikasi Populer
+        (Tokopedia, Tiktok, Shopee, Netflix, Gojek)
+        (1 Aplikasi, 1-3 halaman aja minimal)
+      - 5 UI Aplikasi Random dari Dribbble
+      - 1-3 Aplikasi yang interintegrasi dengan API
+        > Movie API
+        > Weather Api
+        > JSON Placeholder
+
     - Pelajari Basic
     - Perbanyak Praktek
     - Perbanyak Sharing
@@ -40,7 +60,6 @@ class TutorialView extends StatefulWidget {
         React   => HTML, CSS, JS, TS, JSX
       Back End
         Laravel => PHP
-
 
     Paling mudah, bukan berarti paling cocok untuk kita.
     - Library-nya support gak nih utk aplikasi yang mau kita buat
@@ -90,100 +109,13 @@ class TutorialView extends StatefulWidget {
         title: const Text("Dashboard"),
         actions: const [],
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(20.0),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 1.0 / 1.4,
-          crossAxisCount: 2,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: const Column(
+            children: [],
+          ),
         ),
-        itemCount: controller.products.length,
-        shrinkWrap: true,
-        physics: ScrollPhysics(),
-        itemBuilder: (BuildContext context, int index) {
-          var item = controller.products[index];
-          return Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          item["photo"],
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          6.0,
-                        ),
-                      ),
-                    ),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          right: 6.0,
-                          top: 8.0,
-                          child: CircleAvatar(
-                            radius: 14.0,
-                            backgroundColor: Colors.white,
-                            child: Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                              size: 14.0,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                Text(
-                  item["product_name"],
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 4.0,
-                ),
-                Text(
-                  item["category"],
-                  style: TextStyle(
-                    fontSize: 12.0,
-                  ),
-                ),
-                SizedBox(
-                  height: 4.0,
-                ),
-                Text(
-                  "${item["price"]}",
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          )
-              .animate()
-              .moveX(
-                begin: index % 2 == 0 ? 100 : -100,
-                delay: ((index * 100) + 500).ms,
-              )
-              .fadeIn(
-                delay: ((index * 100) + 500).ms,
-              );
-        },
       ),
     );
   }
