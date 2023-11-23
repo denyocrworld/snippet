@@ -59,5 +59,53 @@ class _CURSOR_1State extends State<CURSOR_1> {
   }
 }
 
+//#TEMPLATE init
+@override
+void initState() {
+  super.initState();
+}
+//#END
+
+//#TEMPLATE init_add_post_frame_callback
+@override
+void initState() {
+  super.initState();
+  WidgetsBinding.instance.addPostFrameCallback((_) => onReady());
+}
+
+void onReady() {}
+//#END
+
+
+//#TEMPLATE didChange
+@override
+void didChangeDependencies() {
+  super.didChangeDependencies();
+}
+//#END
+
+
+//#TEMPLATE didUpdate
+@override
+void didUpdateWidget(_) {
+  super.didUpdateWidget(_);
+}
+//#END
+
+//#TEMPLATE deactivate
+@override
+void deactivate() {
+  super.deactivate();
+}
+//#END
+
+
+//#TEMPLATE dipose
+@override
+void dispose() {
+  super.dispose();
+}
+//#END
+
 var CURSOR_2;
 */

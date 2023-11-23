@@ -26,7 +26,7 @@ class TodoService {
 
   Future<Map<String, dynamic>> getById(int id) async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/todos/$id';
+    final String url = 'https://capekngoding.com/demo/api/todos/\$id';
 
     try {
       final response = await dio.get(
@@ -46,7 +46,7 @@ class TodoService {
 
   Future<Map<String, dynamic>> create(Map<String, dynamic> data) async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/alex/api/todos';
+    final String url = 'https://capekngoding.com/demo/api/todos';
 
     try {
       final response = await dio.post(
@@ -67,7 +67,7 @@ class TodoService {
 
   Future<Map<String, dynamic>> update(int id, Map<String, dynamic> data) async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/todos/$id';
+    final String url = 'https://capekngoding.com/demo/api/todos/\$id';
 
     try {
       final response = await dio.put(
@@ -88,7 +88,7 @@ class TodoService {
 
   Future<void> delete(int id) async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/todos/$id';
+    final String url = 'https://capekngoding.com/demo/api/todos/\$id';
 
     try {
       await dio.delete(
@@ -121,6 +121,31 @@ class TodoService {
     } catch (e) {
       throw e;
     }
+  }
+}
+//#END
+*/
+
+/*
+//#TEMPLATE class_db_service
+import 'package:shared_preferences/shared_preferences.dart';
+
+class DBService {
+  static late SharedPreferences prefs;
+  static init() async {
+    prefs = await SharedPreferences.getInstance();
+  }
+
+  static String? get(String key) {
+    return prefs.getString(key);
+  }
+
+  static clear(String key) async {
+    await prefs.remove(key);
+  }
+
+  static set(String key, String value) async {
+    await prefs.setString(key, value);
   }
 }
 //#END
