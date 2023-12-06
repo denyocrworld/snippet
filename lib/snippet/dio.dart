@@ -2,7 +2,6 @@
 import 'dart:io';
 import 'dart:convert';
 
-import 'package:dio/dio.dart';
 import 'package:hyper_ui/core.dart';
 
 class __Something {

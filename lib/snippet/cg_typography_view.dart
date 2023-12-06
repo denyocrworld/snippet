@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/cg_typography_controller.dart';
 
 class CgTypographyView extends StatefulWidget {
   const CgTypographyView({Key? key}) : super(key: key);

@@ -1,8 +1,5 @@
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/cg_logo_controller.dart';
 
 class CgLogoView extends StatefulWidget {
   CgLogoView({Key? key}) : super(key: key);

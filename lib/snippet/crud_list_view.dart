@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/module/template/crud_service/crud_service.dart';
 
 class CrudListView extends StatefulWidget {
   CrudListView({Key? key}) : super(key: key);

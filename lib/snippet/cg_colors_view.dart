@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/cg_colors_controller.dart';
 
 class CgColorsView extends StatefulWidget {
   CgColorsView({Key? key}) : super(key: key);

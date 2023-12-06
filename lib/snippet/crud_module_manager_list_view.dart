@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
@@ -24,7 +22,7 @@ class CrudModuleManagerListView extends StatefulWidget {
                 QButton(
                   width: 180.0,
                   label: "Add Module",
-                  prefixIcon: Icons.add,
+                  icon: Icons.add,
                   onPressed: () => controller.addModule(),
                 ),
                 const SizedBox(
@@ -34,7 +32,7 @@ class CrudModuleManagerListView extends StatefulWidget {
                   width: 180.0,
                   label: "Reset",
                   color: dangerColor,
-                  prefixIcon: Icons.add,
+                  icon: Icons.add,
                   onPressed: () => controller.reset(),
                 ),
                 const SizedBox(
@@ -44,7 +42,7 @@ class CrudModuleManagerListView extends StatefulWidget {
                   width: 180.0,
                   label: "Export",
                   color: infoColor,
-                  prefixIcon: Icons.import_export,
+                  icon: Icons.import_export,
                   onPressed: () => controller.export(),
                 )
               ],
@@ -123,7 +121,7 @@ class CrudModuleManagerListView extends StatefulWidget {
                                       width: 200.0,
                                       label: "Add Field",
                                       size: xs,
-                                      prefixIcon: Icons.add,
+                                      icon: Icons.add,
                                       onPressed: () =>
                                           controller.addField(item),
                                     ),
@@ -135,7 +133,7 @@ class CrudModuleManagerListView extends StatefulWidget {
                                       label: "Delete Module",
                                       size: xs,
                                       color: dangerColor,
-                                      prefixIcon: Icons.remove,
+                                      icon: Icons.remove,
                                       onPressed: () =>
                                           controller.deleteModule(item),
                                     )
@@ -310,7 +308,7 @@ class CrudModuleManagerListView extends StatefulWidget {
                                           label: "Add Relationship",
                                           size: xs,
                                           color: infoColor,
-                                          prefixIcon: Icons.link,
+                                          icon: Icons.link,
                                           onPressed: () =>
                                               controller.addRelations(item),
                                         ),

@@ -70,6 +70,7 @@ class _QRadioFieldState extends State<QRadioField> {
               itemBuilder: (context, index) {
                 var item = items[index];
                 return RadioListTile(
+                  contentPadding: EdgeInsets.all(0.0),
                   title: Text("${item["label"]}"),
                   groupValue: true,
                   value: item["checked"] ?? false,

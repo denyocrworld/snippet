@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/cg_card2_controller.dart';
 
 class CgCard2View extends StatefulWidget {
   CgCard2View({Key? key}) : super(key: key);
@@ -549,7 +548,7 @@ class CgCard2View extends StatefulWidget {
                             height: 6.0,
                           ),
                           Text(
-                            "\$145.00",
+                            "\\\$145.00",
                             style: TextStyle(
                               fontSize: 14.0,
                               color: Colors.grey[600],
@@ -705,7 +704,7 @@ class CgCard2View extends StatefulWidget {
                             height: 6.0,
                           ),
                           Text(
-                            "\$145.00",
+                            "\\\$145.00",
                             style: TextStyle(
                               fontSize: 14.0,
                               color: Colors.grey[600],
@@ -852,7 +851,7 @@ class CgCard2View extends StatefulWidget {
                             children: [
                               Expanded(
                                 child: Text(
-                                  "\$145.00",
+                                  "\\\$145.00",
                                   style: TextStyle(
                                     fontSize: 14.0,
                                     color: Colors.grey[600],

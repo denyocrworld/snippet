@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../view/latihan_remote_datasource_view.dart';
 
 class LatihanRemoteDatasourceController
     extends State<LatihanRemoteDatasourceView> {

@@ -1,7 +1,5 @@
 import 'package:hyper_ui/core.dart';
 import 'package:flutter/material.dart';
-import 'package:hyper_ui/module/snippet/cg_scaffold/_/scaffold_bottom_navigationbar_docked.dart';
-import 'package:hyper_ui/module/snippet/cg_scaffold/_/scaffold_floating_dialog.dart';
 
 class CgMainService {
   List<Map> scaffoldList = [

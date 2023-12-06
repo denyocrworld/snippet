@@ -1,5 +1,6 @@
 //#TEMPLATE reuseable_number_field
 import 'package:flutter/material.dart';
+import 'package:hyper_ui/shared/theme/theme_config.dart';
 import 'package:intl/intl.dart';
 
 class QNumberField extends StatefulWidget {
@@ -59,6 +60,9 @@ class _QNumberFieldState extends State<QNumberField> {
     return Container(
       margin: const EdgeInsets.only(
         bottom: 12.0,
+      ),
+      constraints: BoxConstraints(
+        minHeight: inputHeight,
       ),
       child: TextFormField(
         controller: controller,

@@ -85,6 +85,7 @@ class _QCheckFieldState extends State<QCheckField> {
               itemBuilder: (context, index) {
                 var item = items[index];
                 return CheckboxListTile(
+                  contentPadding: EdgeInsets.all(0.0),
                   title: Text("${item["label"]}"),
                   value: item["checked"] ?? false,
                   onChanged: (val) {

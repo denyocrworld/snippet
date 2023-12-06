@@ -106,13 +106,10 @@ class _QDropdownFieldState extends State<QDropdownField> {
                   child: DropdownButton<Map<String, dynamic>>(
                     isExpanded: true,
                     value: currentValue,
-                    icon: Padding(
-                      padding: const EdgeInsets.only(right: 10.0),
-                      child: Icon(
-                        Icons.arrow_drop_down_outlined,
-                        size: 24.0,
-                        color: Theme.of(context).textTheme.bodyLarge!.color,
-                      ),
+                    icon: Icon(
+                      Icons.arrow_drop_down_outlined,
+                      size: 24.0,
+                      color: Theme.of(context).textTheme.bodyLarge!.color,
                     ),
                     iconSize: 16,
                     elevation: 16,

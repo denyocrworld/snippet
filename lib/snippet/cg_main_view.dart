@@ -5,11 +5,13 @@ class CgMainView extends StatefulWidget {
   final bool oldMenu;
   CgMainView({
     Key? key,
-    this.oldMenu = false,
+    this.oldMenu = true,
   }) : super(key: key);
 
   Widget build(context, CgMainController controller) {
     controller.view = this;
+    return UkMainNavigationView();
+
     CgMainService cgMainService = CgMainService();
 
     if (!oldMenu)
@@ -339,7 +341,6 @@ class CgMainView extends StatefulWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
         controller: controller.scrollController,
         child: Padding(

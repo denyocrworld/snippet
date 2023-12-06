@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/zapp_main_navigation_controller.dart';
 
 class ZappMainNavigationView extends StatefulWidget {
   ZappMainNavigationView({Key? key}) : super(key: key);
@@ -67,7 +66,7 @@ class ZappMainNavigationView extends StatefulWidget {
               icon: Icon(
                 Icons.person_pin_circle_outlined,
               ),
-              label: "User",
+              label: "Profile",
             ),
           ],
         ),

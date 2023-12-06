@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/module/debug/widget/debug_popinput.dart';
 
 class DebugView extends StatefulWidget {
   final BuildContext context;

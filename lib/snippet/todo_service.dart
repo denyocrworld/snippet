@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../../shared/util/dio_helper/dio_helper.dart';
+import '../../shared/util/dio_interceptors/dio_interceptors.dart';
 
 final defaultOptions = Options(
   headers: {

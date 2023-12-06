@@ -27,16 +27,13 @@ Framework
 */
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DB.init();
-  await DioHelper.init();
+  await Diointerceptors.init();
   runMainApp();
 }
 
 runMainApp() async {
   return runApp(const MainApp());
 }
-
-// wait 1 menit
 
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);
@@ -69,22 +66,12 @@ class _MainAppState extends State<MainApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    Widget view = LoginView();
-
-    if (AuthService.currentUser != null) {
-      view = AuthService.currentUser!.role == "admin"
-          ? AdminDashboardView()
-          : CustomerDashboardView();
-    }
-
     return MaterialApp(
       title: 'Capek Ngoding',
       navigatorKey: Get.navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: getDefaultTheme(),
-      home: CgMainView(
-        oldMenu: true,
-      ),
+      home: CgMainView(),
       onGenerateRoute: (routeSettings) {
         print(routeSettings.name);
         return null;

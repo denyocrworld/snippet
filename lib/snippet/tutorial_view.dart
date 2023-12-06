@@ -1,13 +1,6 @@
-import 'dart:math';
 
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:latlong2/latlong.dart';
 
 class TutorialView extends StatefulWidget {
   TutorialView({

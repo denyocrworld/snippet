@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/module/latihan/latihan_remote_datasource/widget/user_dropdown.dart';
-import '../controller/latihan_remote_datasource_controller.dart';
 
 class LatihanRemoteDatasourceView extends StatefulWidget {
   const LatihanRemoteDatasourceView({Key? key}) : super(key: key);

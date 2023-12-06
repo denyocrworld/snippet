@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../view/zapp_dashboard_view.dart';
 
 class ZappDashboardController extends State<ZappDashboardView> {
   static late ZappDashboardController instance;

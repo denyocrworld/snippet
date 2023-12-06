@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/module/tutorial/widget/super_grid_view.dart';
 
 class TutorialCustomerView extends StatefulWidget {
   TutorialCustomerView({Key? key}) : super(key: key);

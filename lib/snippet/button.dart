@@ -1,28 +1,32 @@
 //#TEMPLATE reuseable_button
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/theme/theme_size.dart';
 
 class QButton extends StatelessWidget {
   final String label;
   final Function onPressed;
   final double? width;
-  final IconData? prefixIcon;
+  final double? height;
+  final IconData? icon;
   final IconData? sufixIcon;
   final Color? color;
   final bool spaceBetween;
   final ThemeSize size;
+  final double? fontSize;
 
   QButton({
     Key? key,
     required this.label,
     required this.onPressed,
     this.width,
-    this.prefixIcon,
+    this.height,
+    this.icon,
     this.sufixIcon,
     this.color,
     this.spaceBetween = false,
     this.size = ThemeSize.md,
+    this.fontSize,
   }) : super(key: key);
 
   @override
@@ -37,6 +41,8 @@ class QButton extends StatelessWidget {
     widgetFontSize *= size.scaleFactor;
     widgetIconSize *= size.scaleFactor;
 
+    widgetHeight = height ?? widgetHeight;
+
     return Container(
       width: widgetWidth,
       height: widgetHeight,
@@ -48,20 +54,20 @@ class QButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (prefixIcon != null) ...[
+            if (icon != null) ...[
               Icon(
-                prefixIcon!,
+                icon!,
                 size: widgetIconSize,
               ),
               SizedBox(
                 width: 6.0,
               ),
             ],
-            if (spaceBetween && prefixIcon != null) Spacer(),
+            if (spaceBetween && icon != null) Spacer(),
             Text(
               label,
               style: TextStyle(
-                fontSize: widgetFontSize,
+                fontSize: fontSize ?? widgetFontSize,
               ),
             ),
             if (spaceBetween && sufixIcon != null) Spacer(),

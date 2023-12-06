@@ -1,5 +1,3 @@
-import 'package:hyper_ui/module/snippet/cg_dashboard/widget/cg_dashboard_status_counter.dart';
-import 'package:hyper_ui/shared/widget/card/card.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';

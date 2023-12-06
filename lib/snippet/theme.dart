@@ -5,17 +5,18 @@ import 'package:flutter/material.dart';
 ThemeData getDefaultTheme() {
   return ThemeData().copyWith(
     primaryColor: primaryColor,
-    scaffoldBackgroundColor: Colors.grey[300],
+    scaffoldBackgroundColor: scaffoldBackgroundColor,
     colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.white,
       elevation: 0.6,
-      titleTextStyle: GoogleFonts.lato(
-        color: Colors.blueGrey[700],
+      titleTextStyle: GoogleFonts.ibmPlexSans(
+        color: Color(0xff495057),
         fontWeight: FontWeight.bold,
       ),
-      iconTheme: IconThemeData(
-        color: Colors.blueGrey[700],
+      backgroundColor: Color(0xffffffff),
+      iconTheme: IconThemeData(color: Color(0xff495057)),
+      actionsIconTheme: IconThemeData(
+        color: Color(0xff495057),
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -27,27 +28,32 @@ ThemeData getDefaultTheme() {
       labelColor: Colors.blueGrey[900]!,
     ),
     textTheme: TextTheme(
-      titleSmall: GoogleFonts.lato(
-        color: Colors.blueGrey[900],
+      titleSmall: GoogleFonts.ibmPlexSans(
+        color: textColor,
       ),
-      titleMedium: GoogleFonts.lato(
-        color: Colors.blueGrey[900],
+      titleMedium: GoogleFonts.ibmPlexSans(
+        color: textColor,
       ),
-      titleLarge: GoogleFonts.lato(
-        color: Colors.blueGrey[900],
+      titleLarge: GoogleFonts.ibmPlexSans(
+        color: textColor,
       ),
-      bodyLarge: GoogleFonts.lato(
-        color: Colors.blueGrey[900],
+      bodyLarge: GoogleFonts.ibmPlexSans(
+        color: textColor,
       ),
-      bodySmall: GoogleFonts.lato(
-        color: Colors.blueGrey[900],
+      bodySmall: GoogleFonts.ibmPlexSans(
+        color: textColor,
       ),
-      bodyMedium: GoogleFonts.lato(
-        color: Colors.blueGrey[900],
+      bodyMedium: GoogleFonts.ibmPlexSans(
+        color: textColor,
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 20.0,
+        vertical: 4.0,
+      ),
       hoverColor: Colors.transparent,
+      errorMaxLines: 1,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
@@ -79,7 +85,18 @@ ThemeData getDefaultTheme() {
         ),
       ),
       filled: true,
-      fillColor: Color(0xfffbfbfb),
+      fillColor: inputColor,
+    ),
+    cardTheme: CardTheme(
+      elevation: 0.6,
+      color: Color(0xfff6f6f6),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+        side: BorderSide(
+          width: 0.4,
+          color: Colors.grey[300]!,
+        ),
+      ),
     ),
   );
 }

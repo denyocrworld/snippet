@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/cg_grid2_controller.dart';
 
 class CgGrid2View extends StatefulWidget {
   CgGrid2View({Key? key}) : super(key: key);

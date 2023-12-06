@@ -58,7 +58,7 @@ class MainNavigationView extends StatefulWidget {
               icon: Icon(
                 Icons.person,
               ),
-              label: "User",
+              label: "Profile",
             ),
           ],
         ),

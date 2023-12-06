@@ -37,7 +37,7 @@ class CgHuiButtonView extends StatefulWidget {
               //#TEMPLATE q_button_prefix_icon
               QButton(
                 label: "Save",
-                prefixIcon: Icons.remove,
+                icon: Icons.remove,
                 onPressed: () {},
               ),
               //#END
@@ -63,7 +63,7 @@ class CgHuiButtonView extends StatefulWidget {
               //#TEMPLATE q_button_prefix_icon_space_between
               QButton(
                 label: "Save",
-                prefixIcon: Icons.remove,
+                icon: Icons.remove,
                 spaceBetween: true,
                 onPressed: () {},
               ),

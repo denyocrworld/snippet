@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/module/template/crud_service/crud_service.dart';
 
 class CrudFormController extends State<CrudFormView> {
   static late CrudFormController instance;

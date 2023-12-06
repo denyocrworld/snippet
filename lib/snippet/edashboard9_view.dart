@@ -5,7 +5,6 @@ import '../controller/edashboard9_controller.dart';
 
 class Edashboard9View extends StatefulWidget {
   Edashboard9View({Key? key}) : super(key: key);
-
   Widget build(context, Edashboard9Controller controller) {
     controller.view = this;
     return Scaffold(
@@ -30,18 +29,7 @@ class Edashboard9View extends StatefulWidget {
               decoration: BoxDecoration(
                 color: Colors.blueGrey[900],
               ),
-              otherAccountsPictures: [
-                // CircleAvatar(
-                //   backgroundColor: Colors.white,
-                //   backgroundImage: NetworkImage(
-                //       "https://randomuser.me/api/portraits/women/74.jpg"),
-                // ),
-                // CircleAvatar(
-                //   backgroundColor: Colors.white,
-                //   backgroundImage: NetworkImage(
-                //       "https://randomuser.me/api/portraits/men/47.jpg"),
-                // ),
-              ],
+              otherAccountsPictures: [],
             ),
             ListTile(
               leading: Icon(Icons.home),

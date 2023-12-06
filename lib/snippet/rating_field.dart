@@ -11,7 +11,7 @@ class QRatingField extends StatefulWidget {
   final String? hint;
   final String? helper;
 
-  const QRatingField({
+  QRatingField({
     Key? key,
     required this.label,
     this.value,
@@ -65,61 +65,60 @@ class _QRatingFieldState extends State<QRatingField> {
         },
         builder: (field) {
           return Container(
-            margin: const EdgeInsets.only(
+            margin: EdgeInsets.only(
               bottom: 12.0,
             ),
-            child: Stack(
-              children: [
-                Container(
-                  key: widgetKey,
-                  child: TextFormField(
-                    initialValue: " ",
-                    decoration: InputDecoration(
-                      labelText: widget.label,
-                      helperText: widget.helper,
-                      hintText: widget.hint,
-                      errorText: field.errorText,
+            child: Container(
+              key: widgetKey,
+              child: LayoutBuilder(builder: (context, constraints) {
+                return Stack(
+                  children: [
+                    TextFormField(
+                      initialValue: " ",
+                      decoration: InputDecoration(
+                        labelText: widget.label,
+                        helperText: widget.helper,
+                        hintText: widget.hint,
+                        errorText: field.errorText,
+                      ),
                     ),
-                  ),
-                ),
-                Positioned(
-                  left: Theme.of(context)
-                          .inputDecorationTheme
-                          .contentPadding
-                          ?.horizontal ??
-                      12.0,
-                  top: 0,
-                  right: 0,
-                  child: Container(
-                    height: widgetHeight,
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        RatingBar.builder(
-                          initialRating: widget.value ?? 0,
-                          minRating: 1,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemBuilder: (context, _) => const Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                          itemSize: 20.0,
-                          onRatingUpdate: (rating) {
-                            currentValue = rating;
-                            if (widget.onChanged != null) {
-                              widget.onChanged!(rating);
-                            }
-                          },
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        margin: EdgeInsets.only(
+                          top: 13,
+                          left: 20.0,
                         ),
-                      ],
+                        width: MediaQuery.of(context).size.width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RatingBar.builder(
+                              initialRating: widget.value ?? 0,
+                              minRating: 1,
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemBuilder: (context, _) => Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              itemSize: 20.0,
+                              onRatingUpdate: (rating) {
+                                currentValue = rating;
+                                if (widget.onChanged != null) {
+                                  widget.onChanged!(rating);
+                                }
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ],
+                  ],
+                );
+              }),
             ),
           );
         });

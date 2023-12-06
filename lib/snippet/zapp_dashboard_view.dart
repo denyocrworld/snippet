@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/zapp_dashboard_controller.dart';
 
 class ZappDashboardView extends StatefulWidget {
   ZappDashboardView({Key? key}) : super(key: key);

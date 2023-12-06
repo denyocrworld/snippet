@@ -2,12 +2,53 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
+class ProductCategory {
+  final int idCategory;
+  final String categoryName;
+  ProductCategory({
+    required this.idCategory,
+    required this.categoryName,
+  });
+}
+
 class CgFormView extends StatefulWidget {
   const CgFormView({Key? key}) : super(key: key);
 
+  // Snippet codes, it wont work
+  setState(Function f) {}
+
   Widget build(context, CgFormController controller) {
     controller.view = this;
+    // Snippet codes, it wont work
+    int selectedIndex = 0;
 
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          Container(
+            // Background color for top part
+            height: 200,
+            color: Colors.blue,
+          ),
+          Positioned(
+            top: 150, // Adjust this value to control overlap
+            child: Container(
+              // Bottom part with different color
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height - 150,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
+            ),
+          ),
+          // Add more widgets here that overlap these containers
+        ],
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
         title: const Text("CgForm"),
@@ -680,6 +721,225 @@ class CgFormView extends StatefulWidget {
                         );
                       }),
                       //#END
+                      const SnippetContainer("form_dropdown_map"),
+                      //#TEMPLATE form_dropdown_map
+                      /*
+                      TODO: Required State
+                      int selectedIndex = 0;
+                      */
+                      LayoutBuilder(builder: (context, constraint) {
+                        List<Map<String, dynamic>> items = [
+                          {
+                            "id": 1,
+                            "gender_name": "Male",
+                            "checked": true,
+                          },
+                          {
+                            "id": 2,
+                            "gender_name": "Female",
+                            "checked": true,
+                          },
+                          {
+                            "id": 3,
+                            "gender_name": "XXX",
+                            "checked": true,
+                          }
+                        ];
+
+                        return FormField(
+                          initialValue: false,
+                          enabled: true,
+                          builder: (FormFieldState<bool> field) {
+                            return InputDecorator(
+                              decoration: InputDecoration(
+                                labelText: "Gender",
+                                errorText: field.errorText,
+                                helperText: "Your gender",
+                              ),
+                              child: DropdownButtonHideUnderline(
+                                child: ButtonTheme(
+                                  alignedDropdown: false,
+                                  child: DropdownButton<Map<String, dynamic>>(
+                                    isExpanded: true,
+                                    value: items[selectedIndex],
+                                    icon: Padding(
+                                      padding: EdgeInsets.only(right: 10.0),
+                                      child: Icon(
+                                        Icons.arrow_drop_down_outlined,
+                                        size: 24.0,
+                                        color: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge!
+                                            .color,
+                                      ),
+                                    ),
+                                    iconSize: 16,
+                                    elevation: 16,
+                                    style: TextStyle(
+                                      fontSize: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .fontSize,
+                                      fontFamily: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .fontFamily,
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                    ),
+                                    underline: Container(
+                                      height: 0,
+                                      color: Colors.grey[300],
+                                    ),
+                                    onChanged:
+                                        (Map<String, dynamic>? newValue) {
+                                      var index = items.indexWhere(
+                                          (e) => e["id"] == newValue!["id"]);
+                                      selectedIndex = index;
+                                      setState(() {});
+                                    },
+                                    items: List.generate(
+                                      items.length,
+                                      (index) {
+                                        var item = items[index];
+                                        return DropdownMenuItem<
+                                            Map<String, dynamic>>(
+                                          value: item,
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 0.0,
+                                              vertical: 0.0,
+                                            ),
+                                            child: Text(
+                                              item["gender_name"],
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      }),
+                      //#END
+
+                      const SnippetContainer("form_dropdown_model"),
+                      //#TEMPLATE form_dropdown_model
+                      /*
+                      TODO: Required model
+                      class ProductCategory {
+                        final int idCategory;
+                        final String categoryName;
+                        ProductCategory({
+                          required this.idCategory,
+                          required this.categoryName,
+                        });
+                      }
+
+                      TODO: Required State
+                      int selectedIndex = 0;
+                      */
+                      LayoutBuilder(builder: (context, constraint) {
+                        List<ProductCategory> items = [
+                          ProductCategory(
+                            idCategory: 1,
+                            categoryName: "Rokok",
+                          ),
+                          ProductCategory(
+                            idCategory: 2,
+                            categoryName: "Sembako",
+                          ),
+                          ProductCategory(
+                            idCategory: 3,
+                            categoryName: "Air",
+                          ),
+                        ];
+
+                        return FormField(
+                          initialValue: false,
+                          enabled: true,
+                          builder: (FormFieldState<bool> field) {
+                            return InputDecorator(
+                              decoration: InputDecoration(
+                                labelText: "Gender",
+                                errorText: field.errorText,
+                                helperText: "Your gender",
+                              ),
+                              child: DropdownButtonHideUnderline(
+                                child: ButtonTheme(
+                                  alignedDropdown: false,
+                                  child: DropdownButton<ProductCategory>(
+                                    isExpanded: true,
+                                    value: items[selectedIndex],
+                                    icon: Padding(
+                                      padding: EdgeInsets.only(right: 10.0),
+                                      child: Icon(
+                                        Icons.arrow_drop_down_outlined,
+                                        size: 24.0,
+                                        color: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge!
+                                            .color,
+                                      ),
+                                    ),
+                                    iconSize: 16,
+                                    elevation: 16,
+                                    style: TextStyle(
+                                      fontSize: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .fontSize,
+                                      fontFamily: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .fontFamily,
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                    ),
+                                    underline: Container(
+                                      height: 0,
+                                      color: Colors.grey[300],
+                                    ),
+                                    onChanged: (ProductCategory? newValue) {
+                                      var index = items.indexWhere((e) =>
+                                          e.idCategory == newValue!.idCategory);
+                                      selectedIndex = index;
+                                      setState(() {});
+                                    },
+                                    items: List.generate(
+                                      items.length,
+                                      (index) {
+                                        var item = items[index];
+                                        return DropdownMenuItem<
+                                            ProductCategory>(
+                                          value: item,
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 0.0,
+                                              vertical: 0.0,
+                                            ),
+                                            child: Text(
+                                              item.categoryName,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      }),
+                      //#END
                       const SnippetContainer("form_rating"),
                       //#TEMPLATE form_rating
                       RatingBar.builder(
@@ -953,6 +1213,10 @@ class CgFormView extends StatefulWidget {
                         ],
                       ),
                       //#END
+
+                      //------------------------
+                      //CHAT GPT VERSION
+                      //------------------------
                     ],
                   ),
                 ),

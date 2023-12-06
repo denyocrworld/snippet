@@ -1,11 +1,8 @@
 import 'dart:math';
-import 'dart:math';
 
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import '../controller/cg_card2_statistic_controller.dart';
 
 class CgCard2StatisticView extends StatefulWidget {
   CgCard2StatisticView({Key? key}) : super(key: key);

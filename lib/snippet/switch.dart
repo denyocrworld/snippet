@@ -62,6 +62,7 @@ class _QSwitchState extends State<QSwitch> {
                 var item = items[index];
 
                 return SwitchListTile(
+                  contentPadding: EdgeInsets.all(0.0),
                   title: Text("${item["label"]}"),
                   value: item["checked"] ?? false,
                   onChanged: (val) {
