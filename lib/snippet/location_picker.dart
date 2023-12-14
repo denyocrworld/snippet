@@ -6,9 +6,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import 'location_picker_map_view.dart';
-import 'map_viewer.dart';
-
 class QLocationPicker extends StatefulWidget {
   final String id;
   final String? label;
@@ -119,9 +116,12 @@ class _QLocationPickerState extends State<QLocationPicker> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SizedBox(
+                    height: 12.0,
+                  ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    height: 126.0,
+                    height: 200.0,
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(
                         Radius.circular(12.0),
@@ -132,9 +132,12 @@ class _QLocationPickerState extends State<QLocationPicker> {
                                 child: Text("No location selected"),
                               ),
                             )
-                          : MapViewer(
-                              latitude: latitude,
-                              longitude: longitude,
+                          : AbsorbPointer(
+                              absorbing: true,
+                              child: MapViewer(
+                                latitude: latitude,
+                                longitude: longitude,
+                              ),
                             ),
                     ),
                   ),

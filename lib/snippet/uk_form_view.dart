@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/shared/widget/form/category_picker/tag_picker.dart';
 import '../controller/uk_form_controller.dart';
 
 class UkFormView extends StatefulWidget {
@@ -332,6 +333,41 @@ class UkFormView extends StatefulWidget {
                               "label": "Dessert",
                               "value": "Dessert",
                             }
+                          ],
+                          validator: Validator.required,
+                          onChanged: (index, label, value, item) {},
+                        ),
+                        //#END
+
+                        const SnippetContainer("q_tag_picker"),
+                        //#TEMPLATE
+                        QTagPicker(
+                          items: [
+                            {
+                              "label": "Bed",
+                              "value": "Bed",
+                              "icon": Icons.bed,
+                            },
+                            {
+                              "label": "Tables",
+                              "value": "Tables",
+                              "icon": Icons.table_bar,
+                            },
+                            {
+                              "label": "Chairs",
+                              "value": "Chairs",
+                              "icon": Icons.chair,
+                            },
+                            {
+                              "label": "Car wash",
+                              "value": "Car wash",
+                              "icon": Icons.local_car_wash,
+                            },
+                            {
+                              "label": "Resturants",
+                              "value": "Resturants",
+                              "icon": Icons.restaurant,
+                            },
                           ],
                           validator: Validator.required,
                           onChanged: (index, label, value, item) {},
