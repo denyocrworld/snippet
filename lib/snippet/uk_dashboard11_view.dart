@@ -355,12 +355,8 @@ class UkDashboard11View extends StatefulWidget {
                       title: "Featured products",
                       subtitle: "View all",
                     ),
-                    /*
-                Join Kelas Dart & Flutter
-                capekngoding.com
-                    */
                     const SizedBox(
-                      height: 8.0,
+                      height: 12.0,
                     ),
                     GridView.builder(
                       padding: EdgeInsets.zero,

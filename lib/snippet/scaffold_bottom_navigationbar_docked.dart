@@ -38,6 +38,7 @@ class TemplateScaffoldBottomNavigationBarDocked extends StatefulWidget {
         color: Colors.purple[100],
       )
     ];
+
     List<Map<String, dynamic>> menus = [
       {
         "icon": Icons.home,
