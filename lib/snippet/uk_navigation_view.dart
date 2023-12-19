@@ -21,7 +21,9 @@ class UkNavigationView extends StatefulWidget {
               Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
-                child: QNavigation(
+                child:
+                    //#TEMPLATE q_navigation
+                    QNavigation(
                   mode: QNavigationMode.nav0,
                   pages: [
                     Container(
@@ -56,6 +58,7 @@ class UkNavigationView extends StatefulWidget {
                     ),
                   ],
                 ),
+                //#END
               ),
               const SizedBox(
                 height: 30.0,
@@ -63,7 +66,10 @@ class UkNavigationView extends StatefulWidget {
               Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
-                child: QNavigation(
+                child:
+
+                    //#TEMPLATE q_navigation1
+                    QNavigation(
                   mode: QNavigationMode.nav1,
                   pages: [
                     Container(
@@ -98,6 +104,7 @@ class UkNavigationView extends StatefulWidget {
                     ),
                   ],
                 ),
+                //#END
               ),
               const SizedBox(
                 height: 30.0,
@@ -105,7 +112,9 @@ class UkNavigationView extends StatefulWidget {
               Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
-                child: QNavigation(
+                child:
+                    //#TEMPLATE q_navigation2
+                    QNavigation(
                   mode: QNavigationMode.nav2,
                   pages: [
                     Container(
@@ -140,6 +149,7 @@ class UkNavigationView extends StatefulWidget {
                     ),
                   ],
                 ),
+                //#END
               ),
               const SizedBox(
                 height: 30.0,
@@ -147,7 +157,9 @@ class UkNavigationView extends StatefulWidget {
               Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
-                child: QNavigation(
+                child:
+                    //#TEMPLATE q_navigation3
+                    QNavigation(
                   mode: QNavigationMode.nav3,
                   pages: [
                     Container(
@@ -182,6 +194,7 @@ class UkNavigationView extends StatefulWidget {
                     ),
                   ],
                 ),
+                //#END
               ),
               const SizedBox(
                 height: 30.0,
@@ -189,7 +202,9 @@ class UkNavigationView extends StatefulWidget {
               Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
-                child: QNavigation(
+                child:
+                    //#TEMPLATE q_navigation_docked
+                    QNavigation(
                   mode: QNavigationMode.docked,
                   pages: [
                     Container(
@@ -224,6 +239,7 @@ class UkNavigationView extends StatefulWidget {
                     ),
                   ],
                 ),
+                //#END
               ),
             ],
           ),
