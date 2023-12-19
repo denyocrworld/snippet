@@ -10,6 +10,7 @@ class QCheckField extends StatefulWidget {
   final Future<List<Map<String, dynamic>>> Function()? onFuture;
   final Function(List<Map<String, dynamic>> values, List ids) onChanged;
   final String? helper;
+  final bool singleValue;
 
   const QCheckField({
     Key? key,
@@ -20,6 +21,7 @@ class QCheckField extends StatefulWidget {
     this.onFuture,
     this.hint,
     this.helper,
+    this.singleValue = false,
     required this.onChanged,
   }) : super(key: key);
 
@@ -35,6 +37,16 @@ class _QCheckFieldState extends State<QCheckField> {
     super.initState();
     for (var item in widget.items) {
       items.add(Map.from(item));
+    }
+
+    //Set Value
+    if (widget.value != null) {
+      for (var item in widget.value!) {
+        var itemValue = item["value"];
+        var index = items.indexWhere((i) => i["value"] == itemValue);
+        if (index == -1) continue;
+        items[index]["checked"] = item["checked"];
+      }
     }
     loadItems();
   }
@@ -60,6 +72,14 @@ class _QCheckFieldState extends State<QCheckField> {
     setState(() {});
   }
 
+  uncheckAll() {
+    if (widget.singleValue) {
+      for (var index = 0; index < items.length; index++) {
+        items[index]["checked"] = false;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -82,6 +102,7 @@ class _QCheckFieldState extends State<QCheckField> {
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: items.length,
+              physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 var item = items[index];
                 return CheckboxListTile(
@@ -89,6 +110,7 @@ class _QCheckFieldState extends State<QCheckField> {
                   title: Text("${item["label"]}"),
                   value: item["checked"] ?? false,
                   onChanged: (val) {
+                    uncheckAll();
                     items[index]["checked"] = val;
                     field.didChange(true);
                     setState(() {});

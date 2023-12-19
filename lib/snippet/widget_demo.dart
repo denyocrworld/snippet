@@ -177,7 +177,7 @@ class _HUIWidgetDemoViewState extends State<HUIWidgetDemoView> {
                     {
                       "label": "Persikabo",
                       "value": 102,
-                      "checked": true,
+                      "checked": false,
                     }
                   ],
                   onChanged: (values, ids) {},

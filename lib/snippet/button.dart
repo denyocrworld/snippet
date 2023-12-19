@@ -1,6 +1,5 @@
 //#TEMPLATE reuseable_button
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hyper_ui/core.dart';
 
 class QButton extends StatelessWidget {
@@ -68,6 +67,7 @@ class QButton extends StatelessWidget {
               label,
               style: TextStyle(
                 fontSize: fontSize ?? widgetFontSize,
+                color: Colors.white,
               ),
             ),
             if (spaceBetween && sufixIcon != null) Spacer(),

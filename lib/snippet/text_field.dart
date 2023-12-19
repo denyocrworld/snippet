@@ -1,6 +1,5 @@
 //#TEMPLATE reuseable_text_field
 import 'package:flutter/material.dart';
-import 'package:hyper_ui/core.dart';
 
 class QTextField extends StatefulWidget {
   final String? id;

@@ -2,6 +2,7 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
+import 'package:hyper_ui/core.dart';
 
 class QCard extends StatelessWidget {
   final String? title;
@@ -27,19 +28,18 @@ class QCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.all(
           Radius.circular(
-            8.0,
+            12.0,
           ),
-        ),
-        border: Border.all(
-          width: 1.0,
-          color: Colors.grey[400]!,
         ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (title != null) ...[
-            Padding(
+            Container(
+              decoration: BoxDecoration(
+                color: primaryColor,
+              ),
               padding: EdgeInsets.all(12.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,6 +52,7 @@ class QCard extends StatelessWidget {
                           "$title",
                           style: TextStyle(
                             fontSize: 16.0,
+                            color: Colors.white,
                           ),
                         ),
                         if (subtitle != null)
@@ -59,7 +60,7 @@ class QCard extends StatelessWidget {
                             "$subtitle",
                             style: TextStyle(
                               fontSize: 12.0,
-                              color: Colors.grey,
+                              color: Colors.white,
                             ),
                           ),
                       ],
@@ -82,6 +83,9 @@ class QCard extends StatelessWidget {
           ],
           Container(
             padding: padding ?? const EdgeInsets.all(20.0),
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: children,
