@@ -1,3 +1,4 @@
+//#TEMPLATE reuseable_camera_picker
 import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
@@ -327,3 +328,5 @@ class _QCameraPickerState extends State<QCameraPicker> {
     );
   }
 }
+
+//#END
