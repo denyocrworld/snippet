@@ -85,8 +85,8 @@ class UkDashboard13View extends StatefulWidget {
                             ),
                             decoration: BoxDecoration(
                               color: isSelected
-                                  ? Colors.white
-                                  : const Color(0xff3c3e40),
+                                  ? primaryColor
+                                  : primaryColor.withOpacity(0.6),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(12.0),
                               ),

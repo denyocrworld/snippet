@@ -338,6 +338,8 @@ export 'package:hyper_ui/module/tutorial_product_detail/controller/tutorial_prod
 export 'package:hyper_ui/module/tutorial_product_detail/view/tutorial_product_detail_view.dart';
 export 'package:hyper_ui/module/ui_kit/uk_button/controller/uk_button_controller.dart';
 export 'package:hyper_ui/module/ui_kit/uk_button/view/uk_button_view.dart';
+export 'package:hyper_ui/module/ui_kit/uk_carousel/controller/uk_carousel_controller.dart';
+export 'package:hyper_ui/module/ui_kit/uk_carousel/view/uk_carousel_view.dart';
 export 'package:hyper_ui/module/ui_kit/uk_dashboard/controller/uk_dashboard_controller.dart';
 export 'package:hyper_ui/module/ui_kit/uk_dashboard/model/uk_dashboard_menu_item.dart';
 export 'package:hyper_ui/module/ui_kit/uk_dashboard/view/uk_dashboard_view.dart';
@@ -416,6 +418,7 @@ export 'package:hyper_ui/shared/widget/form/memo_field/memo_field.dart';
 export 'package:hyper_ui/shared/widget/form/number_field/numberfield.dart';
 export 'package:hyper_ui/shared/widget/form/radio/radio.dart';
 export 'package:hyper_ui/shared/widget/form/rating/rating_field.dart';
+export 'package:hyper_ui/shared/widget/form/searchfield/searchfield.dart';
 export 'package:hyper_ui/shared/widget/form/switch/switch.dart';
 export 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';
 export 'package:hyper_ui/shared/widget/form/time_picker/timepicker.dart';

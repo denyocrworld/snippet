@@ -14,6 +14,7 @@ class UkMainNavigationView extends StatefulWidget {
         UkNavigationView(),
         UkFormView(),
         UkButtonView(),
+        UkCarouselView(),
       ],
       menus: [
         NavigationMenu(
@@ -31,6 +32,10 @@ class UkMainNavigationView extends StatefulWidget {
         NavigationMenu(
           icon: MdiIcons.buttonCursor,
           label: "Button",
+        ),
+        NavigationMenu(
+          icon: MdiIcons.imageArea,
+          label: "Carousel",
         ),
       ],
     );
