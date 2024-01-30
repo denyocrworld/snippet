@@ -183,7 +183,7 @@ class CgCarouselView extends StatefulWidget {
                                 shape: BoxShape.circle,
                                 color: (Theme.of(context).brightness ==
                                             Brightness.dark
-                                        ? Colors.white
+                                        ? primaryColor
                                         : Colors.black)
                                     .withOpacity(
                                         controller.currentIndex == entry.key
@@ -268,7 +268,7 @@ class CgCarouselView extends StatefulWidget {
                             ),
                             decoration: BoxDecoration(
                               color: isSelected
-                                  ? Colors.white
+                                  ? primaryColor
                                   : const Color(0xff3c3e40),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(12.0),

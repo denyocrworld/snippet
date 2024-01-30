@@ -126,7 +126,7 @@ class _QAutoCompleteState extends State<QAutoComplete> {
                                 ),
                                 border: Border.all(
                                   width: 1.0,
-                                  color: Colors.grey[300]!.withOpacity(0.4),
+                                  color: primaryColor,
                                 ),
                               ),
                               child: ListView.builder(
