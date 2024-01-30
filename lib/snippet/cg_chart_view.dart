@@ -54,7 +54,7 @@ class CgChartView extends StatefulWidget {
                     color: Theme.of(context).cardColor,
                     padding: const EdgeInsets.all(12.0),
                     child: SfCartesianChart(
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         // Renders line chart
                         LineSeries<Map, int>(
                           dataSource: chartData,
@@ -98,7 +98,7 @@ class CgChartView extends StatefulWidget {
                     color: Theme.of(context).cardColor,
                     padding: const EdgeInsets.all(12.0),
                     child: SfCartesianChart(
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         SplineSeries<Map, int>(
                           dataSource: chartData,
                           xValueMapper: (Map data, _) => data["year"],
@@ -141,7 +141,7 @@ class CgChartView extends StatefulWidget {
                     color: Theme.of(context).cardColor,
                     padding: const EdgeInsets.all(12.0),
                     child: SfCartesianChart(
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         BarSeries<Map, int>(
                           dataSource: chartData,
                           xValueMapper: (Map data, _) => data["year"],
@@ -188,7 +188,7 @@ class CgChartView extends StatefulWidget {
                       primaryXAxis: NumericAxis(
                         decimalPlaces: 0,
                       ),
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         BarSeries<Map, int>(
                           dataSource: chartData,
                           xValueMapper: (Map data, _) => data["year"],
@@ -231,7 +231,7 @@ class CgChartView extends StatefulWidget {
                     color: Theme.of(context).cardColor,
                     padding: const EdgeInsets.all(12.0),
                     child: SfCartesianChart(
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         ScatterSeries<Map, int>(
                           dataSource: chartData,
                           xValueMapper: (Map data, _) => data["year"],
@@ -274,7 +274,7 @@ class CgChartView extends StatefulWidget {
                     color: Theme.of(context).cardColor,
                     padding: const EdgeInsets.all(12.0),
                     child: SfCartesianChart(
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         AreaSeries<Map, int>(
                           dataSource: chartData,
                           xValueMapper: (Map data, _) => data["year"],
@@ -317,7 +317,7 @@ class CgChartView extends StatefulWidget {
                     color: Theme.of(context).cardColor,
                     padding: const EdgeInsets.all(12.0),
                     child: SfCartesianChart(
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         BubbleSeries<Map, int>(
                           dataSource: chartData,
                           xValueMapper: (Map data, _) => data["year"],
@@ -360,7 +360,7 @@ class CgChartView extends StatefulWidget {
                     color: Theme.of(context).cardColor,
                     padding: const EdgeInsets.all(12.0),
                     child: SfCartesianChart(
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         StepLineSeries<Map, int>(
                           dataSource: chartData,
                           xValueMapper: (Map data, _) => data["year"],

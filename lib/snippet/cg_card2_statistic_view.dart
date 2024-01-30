@@ -105,7 +105,7 @@ class CgCard2StatisticView extends StatefulWidget {
                               ),
                               plotAreaBorderColor: Colors.transparent,
                               margin: EdgeInsets.all(0.0),
-                              series: <ChartSeries>[
+                              series: <CartesianSeries>[
                                 SplineSeries<Map, int>(
                                   color: Colors.white,
                                   dataSource: chartData,
@@ -212,7 +212,7 @@ class CgCard2StatisticView extends StatefulWidget {
                               plotAreaBorderColor: Colors.transparent,
                               margin: EdgeInsets.all(0.0),
                               isTransposed: true,
-                              series: <ChartSeries>[
+                              series: <CartesianSeries>[
                                 BarSeries<Map, int>(
                                   color: Colors.white,
                                   dataSource: chartData,
@@ -318,7 +318,7 @@ class CgCard2StatisticView extends StatefulWidget {
                               ),
                               plotAreaBorderColor: Colors.transparent,
                               margin: EdgeInsets.all(0.0),
-                              series: <ChartSeries>[
+                              series: <CartesianSeries>[
                                 // Renders line chart
                                 LineSeries<Map, int>(
                                   color: Colors.white,
@@ -385,7 +385,7 @@ class CgCard2StatisticView extends StatefulWidget {
                               ),
                               plotAreaBorderColor: Colors.transparent,
                               margin: EdgeInsets.all(0.0),
-                              series: <ChartSeries>[
+                              series: <CartesianSeries>[
                                 SplineSeries<Map, int>(
                                   color: Colors.white.withOpacity(0.7),
                                   dataSource: chartData,
@@ -471,7 +471,7 @@ class CgCard2StatisticView extends StatefulWidget {
                               ),
                               plotAreaBorderColor: Colors.transparent,
                               margin: EdgeInsets.all(0.0),
-                              series: <ChartSeries>[
+                              series: <CartesianSeries>[
                                 SplineSeries<Map, int>(
                                   color: Colors.white.withOpacity(0.7),
                                   dataSource: chartData,

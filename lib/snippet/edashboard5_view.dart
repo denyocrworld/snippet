@@ -130,7 +130,7 @@ class Edashboard5View extends StatefulWidget {
                                     ),
                                     plotAreaBorderColor: Colors.transparent,
                                     margin: EdgeInsets.all(0.0),
-                                    series: <ChartSeries>[
+                                    series: <CartesianSeries>[
                                       SplineSeries<Map, int>(
                                         color: Colors.white,
                                         dataSource: chartData,

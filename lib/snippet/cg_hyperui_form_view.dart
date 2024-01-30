@@ -1,5 +1,4 @@
 //#GROUP_TEMPLATE hyperui_form
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';

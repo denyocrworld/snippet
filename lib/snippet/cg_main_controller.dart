@@ -33,8 +33,7 @@ class CgMainController extends State<CgMainView> {
   @override
   Widget build(BuildContext context) => widget.build(context, this);
 
-  // Widget mainView = CgDashboardView();
-  Widget mainView = CrudListView();
+  Widget mainView = CgDashboardView();
   updateView(Widget view) {
     mainView = view;
     setState(() {});

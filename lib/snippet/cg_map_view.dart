@@ -28,7 +28,7 @@ class CgMapView extends StatefulWidget {
                         -6.1754234,
                         106.827224,
                       ),
-                      builder: (context) => const Icon(
+                      child: const Icon(
                         Icons.pin_drop,
                         color: Colors.red,
                         size: 24,
@@ -73,7 +73,7 @@ class CgMapView extends StatefulWidget {
                         -6.1754234,
                         106.827224,
                       ),
-                      builder: (context) => const Icon(
+                      child: const Icon(
                         Icons.pin_drop,
                         color: Colors.red,
                         size: 24,
@@ -84,7 +84,7 @@ class CgMapView extends StatefulWidget {
                         -6.1754234,
                         106.828524,
                       ),
-                      builder: (context) => const Icon(
+                      child: Icon(
                         Icons.pin_drop,
                         color: Colors.green,
                         size: 24,
@@ -95,7 +95,7 @@ class CgMapView extends StatefulWidget {
                         -6.1767234,
                         106.828524,
                       ),
-                      builder: (context) => const Icon(
+                      child: const Icon(
                         Icons.pin_drop,
                         color: Colors.blue,
                         size: 24,
@@ -106,7 +106,7 @@ class CgMapView extends StatefulWidget {
                         -6.1767234,
                         106.827224,
                       ),
-                      builder: (context) => const Icon(
+                      child: const Icon(
                         Icons.pin_drop,
                         color: Colors.orange,
                         size: 24,
@@ -164,7 +164,7 @@ class CgMapView extends StatefulWidget {
                         -6.1754234,
                         106.827224,
                       ),
-                      builder: (context) => const Icon(
+                      child: const Icon(
                         Icons.pin_drop,
                         color: Color(0xFFF44336),
                         size: 24,
@@ -175,7 +175,7 @@ class CgMapView extends StatefulWidget {
                         -6.1753234,
                         106.823324,
                       ),
-                      builder: (context) => const Icon(
+                      child: const Icon(
                         Icons.pin_drop,
                         color: Colors.blue,
                         size: 24,
@@ -195,10 +195,11 @@ class CgMapView extends StatefulWidget {
                     height: MediaQuery.of(context).size.height * 0.4,
                     child: FlutterMap(
                       options: MapOptions(
-                        center: LatLng(-6.1754234, 106.827224),
-                        zoom: 16,
-                        interactiveFlags:
-                            InteractiveFlag.all - InteractiveFlag.rotate,
+                        initialCenter: LatLng(-6.1754234, 106.827224),
+                        initialZoom: 16,
+                        interactionOptions: InteractionOptions(
+                          flags: InteractiveFlag.all - InteractiveFlag.rotate,
+                        ),
                       ),
                       children: [
                         TileLayer(

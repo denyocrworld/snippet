@@ -17,36 +17,6 @@ class CgHyperuiListView extends StatefulWidget {
           padding: EdgeInsets.all(10.0),
           child: Column(
             children: [
-              //#TEMPLATE q_list_view
-              QListView(
-                shrinkWrap: true,
-                futureBuilder: (page) async {
-                  var response = await Dio().get(
-                    "https://reqres.in/api/users",
-                    options: Options(
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                    ),
-                  );
-                  return response;
-                },
-                builder: (index, item) {
-                  return Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.grey[200],
-                        backgroundImage: NetworkImage(
-                          item["avatar"],
-                        ),
-                      ),
-                      title: Text("${item["first_name"]}"),
-                      subtitle: Text("${item["email"]}"),
-                    ),
-                  );
-                },
-              ),
-              //#END
               SnippetContainer("list_categories"),
               //#TEMPLATE list_categories
               Builder(builder: (context) {

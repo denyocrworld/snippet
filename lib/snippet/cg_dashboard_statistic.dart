@@ -80,7 +80,7 @@ class CgDashboardStatistic extends StatelessWidget {
                       ),
                       plotAreaBorderColor: Colors.transparent,
                       margin: EdgeInsets.all(0.0),
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         SplineSeries<Map, int>(
                           dataSource: points,
                           color: Colors.white.withOpacity(0.6),
@@ -108,7 +108,7 @@ class CgDashboardStatistic extends StatelessWidget {
                       ),
                       plotAreaBorderColor: Colors.transparent,
                       margin: EdgeInsets.all(0.0),
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         AreaSeries<Map, int>(
                           color: Colors.white.withOpacity(0.6),
                           dataSource: points,
@@ -137,7 +137,7 @@ class CgDashboardStatistic extends StatelessWidget {
                       plotAreaBorderColor: Colors.transparent,
                       margin: EdgeInsets.all(0.0),
                       isTransposed: true,
-                      series: <ChartSeries>[
+                      series: <CartesianSeries>[
                         BarSeries<Map, int>(
                           color: Colors.white.withOpacity(0.6),
                           dataSource: points,

@@ -1,12 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/widget/form/category_picker/tag_picker.dart';
-import '../controller/uk_form_controller.dart';
+import 'package:hyper_ui/shared/widget/form/searchfield/searchfield.dart';
 
 class UkFormView extends StatefulWidget {
-  const UkFormView({Key? key}) : super(key: key);
+  UkFormView({Key? key}) : super(key: key);
 
   Widget build(context, UkFormController controller) {
     controller.view = this;
@@ -46,27 +43,41 @@ class UkFormView extends StatefulWidget {
                     child: Column(
                       children: [
                         SnippetHeader("Basic"),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: QTextField(
-                                label: "Test",
-                                validator: Validator.required,
-                                value: "Test",
-                                onChanged: (value) {},
-                              ),
-                            ),
-                            Expanded(
-                              child: QTextField(
-                                label: "Test",
-                                validator: Validator.required,
-                                value: null,
-                                onChanged: (value) {},
-                              ),
-                            ),
-                          ],
-                        ),
 
+                        QAutoComplete(
+                          label: "Favorite employee",
+                          validator: Validator.required,
+                          items: [
+                            {
+                              "label": "Jackie Roo",
+                              "value": "101",
+                              "info": "Hacker",
+                            },
+                            {
+                              "label": "Dan Milton",
+                              "value": "102",
+                              "info": "UI/UX Designer",
+                            },
+                            {
+                              "label": "Ryper Roo",
+                              "value": "103",
+                              "info": "Android Developer",
+                            }
+                          ],
+                          value: null,
+                          onChanged: (value, label) {},
+                        ),
+                        SnippetContainer("q_searchfield"),
+                        //#TEMPLATE q_searchfield
+                        QSearchField(
+                          label: "Search",
+                          value: null,
+                          prefixIcon: Icons.search,
+                          suffixIcon: null,
+                          onChanged: (value) {},
+                          onSubmitted: (value) {},
+                        ),
+                        //#END
                         SnippetContainer("q_textfield"),
                         //#TEMPLATE q_textfield
                         QTextField(
@@ -339,7 +350,7 @@ class UkFormView extends StatefulWidget {
                         ),
                         //#END
 
-                        const SnippetContainer("q_tag_picker"),
+                        SnippetContainer("q_tag_picker"),
                         //#TEMPLATE
                         QTagPicker(
                           items: [
@@ -411,13 +422,11 @@ class UkFormView extends StatefulWidget {
                         ),
                         //#END
                         SnippetContainer("form_key"),
-                        Text(
-                            """
+                        Text("""
           GlobalKey<FormState> formKey = GlobalKey<FormState>();
           """),
                         SnippetContainer("form_validate"),
-                        Text(
-                            """
+                        Text("""
           bool isValid = formKey.currentState!.validate();
           if(isValid) {
             return;

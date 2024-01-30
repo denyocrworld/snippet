@@ -135,12 +135,12 @@ class Edashboard6View extends StatefulWidget {
                 return Container(
                   height: 200.0,
                   color: Theme.of(context).cardColor,
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: SfCartesianChart(
                     primaryYAxis: NumericAxis(
                       opposedPosition: true,
                     ),
-                    series: <ChartSeries>[
+                    series: <CartesianSeries>[
                       AreaSeries<Map, int>(
                         borderWidth: 2.0,
                         borderColor: infoColor,

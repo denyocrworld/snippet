@@ -85,20 +85,6 @@ class CgMainView extends StatefulWidget {
                                           CgDashboardView(),
                                         ),
                                       ),
-                                      CgMainMenuItem(
-                                        icon: MdiIcons.table,
-                                        label: "CRUD",
-                                        onTap: () => controller.updateView(
-                                          CrudListView(),
-                                        ),
-                                      ),
-                                      CgMainMenuItem(
-                                        icon: MdiIcons.apps,
-                                        label: "Module Manager",
-                                        onTap: () => controller.updateView(
-                                          CrudModuleManagerListView(),
-                                        ),
-                                      ),
                                       CgMainMenuCategory(
                                         label: "THEME",
                                       ),
@@ -357,17 +343,6 @@ class CgMainView extends StatefulWidget {
                       Icons.circle,
                       size: 14.0,
                       color: Colors.green,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 6.0,
-                  ),
-                  InkWell(
-                    onTap: () => Get.to(CrudModuleManagerListView()),
-                    child: const Icon(
-                      Icons.circle,
-                      size: 14.0,
-                      color: Colors.red,
                     ),
                   ),
                   const SizedBox(

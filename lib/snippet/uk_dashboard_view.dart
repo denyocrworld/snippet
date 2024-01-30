@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/module/ui_kit/uk_dashboard/model/uk_dashboard_menu_item.dart';
-import '../controller/uk_dashboard_controller.dart';
 
 class UkDashboardView extends StatefulWidget {
   const UkDashboardView({Key? key}) : super(key: key);

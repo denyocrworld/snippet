@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import '../view/uk_dashboard12_view.dart';
 
 class UkDashboard12Controller extends State<UkDashboard12View> {
   static late UkDashboard12Controller instance;

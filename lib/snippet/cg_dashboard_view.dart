@@ -230,7 +230,7 @@ class CgDashboardView extends StatefulWidget {
                                   decimalPlaces: 0,
                                   interval: 1,
                                 ),
-                                series: <ChartSeries>[
+                                series: <CartesianSeries>[
                                   SplineSeries<Map, int>(
                                     color: Color(0xff34b961),
                                     dataSource: productASales,
@@ -456,7 +456,7 @@ class CgDashboardView extends StatefulWidget {
                                     -6.1754234,
                                     106.827224,
                                   ),
-                                  builder: (context) => const Icon(
+                                  child: const Icon(
                                     Icons.pin_drop,
                                     color: Colors.red,
                                     size: 24,

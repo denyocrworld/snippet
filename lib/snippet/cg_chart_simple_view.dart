@@ -43,7 +43,7 @@ List<Widget> _widgets = [
           ),
           plotAreaBorderColor: Colors.transparent,
           margin: EdgeInsets.all(0.0),
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             // Renders line chart
             LineSeries<Map, int>(
               color: Colors.blue,
@@ -96,7 +96,7 @@ List<Widget> _widgets = [
           ),
           plotAreaBorderColor: Colors.transparent,
           margin: EdgeInsets.all(0.0),
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             SplineSeries<Map, int>(
               color: Colors.blue,
               dataSource: chartData,
@@ -148,7 +148,7 @@ List<Widget> _widgets = [
           ),
           plotAreaBorderColor: Colors.transparent,
           margin: EdgeInsets.all(0.0),
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             BarSeries<Map, int>(
               color: Colors.blue,
               dataSource: chartData,
@@ -201,7 +201,7 @@ List<Widget> _widgets = [
           plotAreaBorderColor: Colors.transparent,
           margin: EdgeInsets.all(0.0),
           isTransposed: true,
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             BarSeries<Map, int>(
               color: Colors.blue,
               dataSource: chartData,
@@ -253,7 +253,7 @@ List<Widget> _widgets = [
           ),
           plotAreaBorderColor: Colors.transparent,
           margin: EdgeInsets.all(0.0),
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             ScatterSeries<Map, int>(
               color: Colors.blue,
               dataSource: chartData,
@@ -305,7 +305,7 @@ List<Widget> _widgets = [
           ),
           plotAreaBorderColor: Colors.transparent,
           margin: EdgeInsets.all(0.0),
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             AreaSeries<Map, int>(
               color: Colors.blue,
               dataSource: chartData,
@@ -357,7 +357,7 @@ List<Widget> _widgets = [
           ),
           plotAreaBorderColor: Colors.transparent,
           margin: EdgeInsets.all(0.0),
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             BubbleSeries<Map, int>(
               color: Colors.blue,
               dataSource: chartData,
@@ -409,7 +409,7 @@ List<Widget> _widgets = [
           ),
           plotAreaBorderColor: Colors.transparent,
           margin: EdgeInsets.all(0.0),
-          series: <ChartSeries>[
+          series: <CartesianSeries>[
             StepLineSeries<Map, int>(
               color: Colors.blue,
               dataSource: chartData,

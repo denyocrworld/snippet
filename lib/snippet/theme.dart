@@ -98,5 +98,11 @@ ThemeData getDefaultTheme() {
         ),
       ),
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.blueGrey,
+        foregroundColor: Colors.white,
+      ),
+    ),
   );
 }

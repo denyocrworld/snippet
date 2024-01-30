@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/widget/navigation/qnavigation.dart';
-import '../controller/uk_main_navigation_controller.dart';
 
 class UkMainNavigationView extends StatefulWidget {
   const UkMainNavigationView({Key? key}) : super(key: key);
